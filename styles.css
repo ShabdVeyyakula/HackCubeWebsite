@@ -7,6 +7,7 @@ body{
 .headerBackground
 {
     background-color: #400072;
+    height: 600px;
 }
 
 
@@ -24,9 +25,6 @@ body{
 
 .mainTitle
 {
-    position: absolute;
-    top: 200px;
-    left: 450px;
     color: white;
     font-size: 60px;
     font-weight: 700;
@@ -34,7 +32,6 @@ body{
 
 .imageMain
 {
-    position: absolute;
     top: 100px;
     left: 1000px;
     color: white;
@@ -45,9 +42,6 @@ body{
 
 .getStartedBtn
 {
-    position: absolute;
-    top: 530px;
-    left: 450px;
     height: 50px;
     width: 150px; 
     color: rgb(0, 255, 191);;
@@ -85,5 +79,11 @@ body{
 {
     font-size: 90px;
     left: 20%;
+}
+
+.header-dscrp
+{
+    font-size: 25px;
+    color: white;
 }
 
