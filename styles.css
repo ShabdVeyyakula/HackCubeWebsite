@@ -4,6 +4,11 @@ body{
     max-width: 100%;
 }
 
+.headerBackground
+{
+    background-color: #400072;
+}
+
 
 
 
@@ -67,22 +72,18 @@ body{
 
 .odometerBigText
 {
-    position: relative;
     font-size: 90px;
-    left: 400px;
 }
 
 .statsMiniTxt
 {
-    position: relative;
-    font-size: 30px;
-    left: 450px;
+    font-size: 35px;
+    color: rgb(136, 136, 136);
 }
 
 .odometer
 {
-    position: relative;
     font-size: 90px;
-    left: 200%;
+    left: 20%;
 }
 

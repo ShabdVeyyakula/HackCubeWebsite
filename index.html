@@ -9,13 +9,19 @@
   <link rel="stylesheet" href="styles.css">
 
   <link rel="stylesheet" href="odometer-theme-default.css" />
-<script type="text/javascript" src="odometer.js"></script>
+  <script type="text/javascript" src="odometer.js"></script>
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
   <script src="code.js">
 
@@ -26,59 +32,114 @@
 
 <body>
 
+  <!--NAVBAR-->
+  <div class="headerBackground" style="height: 600px;"> 
 
-  <img src="Assets/background2.png" />
-  <h1 class="h11">Procura</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-custom" style="background-color: #400072;">
+      <a class="navbar-brand" href="#" style="color: white; font-size: 30px; font-weight: 630;">Procura</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: honeydew;">
+        <span class="navbar-toggler-icon" style="color: honeydew;"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: honeydew;">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" style="color: rgb(204, 204, 204); font-size: 20px; font-weight: 630;">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color: rgb(204, 204, 204); font-size: 20px; font-weight: 630;">Info</a>
+          </li>
+          <li class="nav-item dropdown">
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1" style="color: rgb(204, 204, 204); font-size: 20px; font-weight: 630;">Download</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+    
+  <!--HEADER-->
+  <div class=".container-fluid" style="position: absolute; top: 1px;">
 
-  <h1 class="mainTitle">MANAGE <br> YOUR <br> HACKATHON <br> TODAY</h1>
+    <div class="row">
+      <div class="col-xs-8 col-sm-6">
 
-  <img src="Assets/clipartusenewnew.png" class="imageMain">
+        <h1 class="mainTitle">MANAGE <br> YOUR <br> HACKATHON <br> TODAY</h1>
+        <button class="getStartedBtn">Get Started →</button>
 
-  <button class="getStartedBtn">Get Started →</button>
+      </div>
+
+      <img src="Assets/clipartusenewnew.png" class="img-responsive" style="height: 300px; width: 300px;">
+    </div>
+  </div>
+
+
+  <!--BOTTOM CURVE-->
+
+  <img src="Assets/bottomcurve.png"/>
 
   <div style="height: 400px;"></div>
 
-  <ul style="display: flex; list-style-type: none;">
-    <li>
-      <h1 class="odometer">90</h1>
-      <h1 class="statsMiniTxt" >Mentors Registered</h1>
-    </li>
+  <!--STATS SECTION-->
+  <div class="d-flex justify-content-center">
+
+    
+      <div class="row">
+        <div class="p-2">
+          
+          <!-- MENTORS REGISTERED SECTION-->
+          <h1 class="odometer">90</h1>
+          <h1 class="statsMiniTxt">Mentors Registered</h1>
+  
+        </div>
+
+        <span class="placeholder" style="width: 50px;"></span>
 
 
-    <li style="margin-left: 200px;">
-      <h1 class="odometer">90</h1>
-      <h1 class="statsMiniTxt" >Hackers Registered</h1>
-    </li>
+        <div class="p-2">
+  
+          <h1 class="odometer">90</h1>
+          <h1 class="statsMiniTxt">Hackers Registered</h1>
+  
+        </div>
 
-    <li style="margin-left: 200px;">
-      <h1 class="odometer" id = "odometer">0</h1>
-      <h1 class="statsMiniTxt">Hackathons Hosted</h1>
-    </li>
+        <span class="placeholder" style="width: 50px;"></span>
 
-  </ul>
+        <div class="p-2" style="margin-right:">
+  
+          <h1 class="odometer" id="odometer">0</h1>
+          <h1 class="statsMiniTxt">Hackathons Hosted</h1>
+  
+        </div>
+      
+    </div>
+
+  </div>
+  
 
   <script>
     window.odometerOptions = {
-  auto: false, // Don't automatically initialize everything with class 'odometer'
-  selector: '.my-numbers', // Change the selector used to automatically find things to be animated
-  format: '(,ddd).dd', // Change how digit groups are formatted, and how many digits are shown after the decimal point
-  duration: 3000, // Change how long the javascript expects the CSS animation to take
-  theme: 'car', // Specify the theme (if you have more than one theme css file on the page)
-  animation: 'count' // Count is a simpler animation method which just increments the value,
-                     // use it when you're looking for something more subtle.
-};
+      auto: false, // Don't automatically initialize everything with class 'odometer'
+      selector: '.my-numbers', // Change the selector used to automatically find things to be animated
+      format: '(,ddd).dd', // Change how digit groups are formatted, and how many digits are shown after the decimal point
+      duration: 3000, // Change how long the javascript expects the CSS animation to take
+      theme: 'car', // Specify the theme (if you have more than one theme css file on the page)
+      animation: 'count' // Count is a simpler animation method which just increments the value,
+      // use it when you're looking for something more subtle.
+    };
   </script>
 
   <script>
     window.odometerOptions = {
       format: '(ddd).dd'
     };
-    </script>
+  </script>
 
   <script>
-    setTimeout(function() {
-	  odometer.innerHTML = 120;
-  }, 1000);
+    setTimeout(function () {
+      odometer.innerHTML = 120;
+    }, 1000);
   </script>
 
   <div style="height: 300px;"></div>
