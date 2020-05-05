@@ -1,16 +1,77 @@
+// Hackathons Hosted Animation
 
+$.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+  var elementBottom = elementTop + $(this).outerHeight();
 
-var el = document.querySelector('.odometer-theme-default');
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height();
 
-od = new Odometer({
-  el: el,
-  value: 333555,
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
 
-  // Any option (other than auto and selector) can be passed in here
-  format: '',
-  theme: 'digital'
+$(window).on('resize scroll', function() {
+  $('.odometer').each(function() {
+    if ($(this).isInViewport()) {
+        
+      setTimeout(function(){
+        setTimeout(function () {
+            hackathonsHosted.innerHTML = 22;
+          }, 200);
+      }, 0);
+    } else {
+    }
+  });
 });
 
-od.update(555)
-// or
-el.innerHTML = 555
+// Hackers registered animation
+
+$.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+  var elementBottom = elementTop + $(this).outerHeight();
+
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height();
+
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+$(window).on('resize scroll', function() {
+  $('.odometer').each(function() {
+    if ($(this).isInViewport()) {
+        
+      setTimeout(function(){
+        setTimeout(function () {
+            hackersRegistered.innerHTML = 120;
+          }, 200);
+      }, 0);
+    } else {
+    }
+  });
+});
+
+//Mentors registered animation
+
+$.fn.isInViewport = function() {
+  var elementTop = $(this).offset().top;
+  var elementBottom = elementTop + $(this).outerHeight();
+
+  var viewportTop = $(window).scrollTop();
+  var viewportBottom = viewportTop + $(window).height();
+
+  return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
+$(window).on('resize scroll', function() {
+  $('.odometer').each(function() {
+    if ($(this).isInViewport()) {
+        
+      setTimeout(function(){
+        setTimeout(function () {
+          mentorsRegistered.innerHTML = 20;
+          }, 200);
+      }, 0);
+    } else {
+    }
+  });
+});
