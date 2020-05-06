@@ -15,8 +15,6 @@ body{
 }
 
 
-
-
 .h11
 {
     position: absolute;
@@ -118,4 +116,19 @@ p{
     font-weight: 440;
     color: grey;
     font-size: 16px;
+}
+
+.downloadFooter
+{
+    background-color: rgb(214, 214, 214);
+    height: 230px;
+    margin: 0%;
+}
+
+.downloadSectionTitle
+{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: white;
 }
