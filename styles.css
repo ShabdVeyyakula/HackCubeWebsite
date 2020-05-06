@@ -132,3 +132,23 @@ p{
     margin-bottom: 40px;
     color: white;
 }
+
+.footerMainTitle
+{
+    color: #a5abb3;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footerTitles
+{
+    color: #a5abb3;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.footerText
+{
+    color: #a5abb3;
+    font-size: 17px;
+}
