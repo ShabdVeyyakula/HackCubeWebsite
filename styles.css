@@ -104,3 +104,18 @@ body{
     transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
 }
 
+
+.descriptionTitle
+{
+    font-size: 40;
+    color: #323f52;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+
+p{
+    font-weight: 440;
+    color: grey;
+    font-size: 16px;
+}
