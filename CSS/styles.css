@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Arial, Helvetica, sans-serif;
+    src: "";
+  }
+
 html{
     scroll-behavior: smooth;
 }
@@ -154,4 +159,16 @@ p{
 }
 
 
+.phoneTitles
+{
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+}
 
+.phoneDescription
+{
+    font-size: 25px;
+    font-weight: 500px;
+    color: rgb(207, 207, 207);
+}

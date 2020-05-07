@@ -8,6 +8,8 @@
 
   <link rel="stylesheet" href="CSS/styles.css">
 
+  <link rel="stylesheet" href="PhoneTemplates/devices.css-master/dist/devices.css">
+
   <link rel="stylesheet" href="odometer-theme-default.css" />
   <script type="text/javascript" src="odometer.js"></script>
 
@@ -30,6 +32,15 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    $(function() {
+  AOS.init();
+});
+  </script>
+
 
   <script src="code.js">
 
@@ -79,7 +90,7 @@
 
       <div class="row">
 
-        <div class="d-flex flex-column">
+        <div class="d-flex flex-column" data-aos="fade-up">
 
           <h1 class="mainTitle">MANAGE <br> YOUR <br> HACKATHON <br> TODAY</h1>
 
@@ -103,7 +114,7 @@
 
         <span class="placeholder" style="width: 70px;"></span>
 
-        <img src="Assets/isometric_clipart.png" class="img-responsive" style="height: 450px; width: 450px;">
+        <img src="Assets/isometric_clipart.png" class="img-responsive" style="height: 450px; width: 450px;" data-aos="fade-left" data-aos-delay="200">
 
       </div>
 
@@ -133,7 +144,7 @@
 
       <span class="placeholder" style="width: 50px;"></span>
 
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center" style="margin-left: 20px;">
 
         <div class="col-md-20 text-center">
           <img src="Assets/speaker_icon.png" height="90px" width = "90px" class="img-fluid">
@@ -163,6 +174,8 @@
   <!--STATS SECTION-->
 
   <!--
+
+
 
 
     <div class="container-fluid" id="statsSection">
@@ -226,8 +239,39 @@
     </div>
   </div>
   -->
+    
+  <!--FEATURES SECTION 1-->
+
+  <img class="img-responsive" src="Assets/top_curve_div.png" style="margin-bottom: 0px; border: none">
 
 
+      <div class="d-flex justify-content-center" style="background-color: #9e59f2;" style="width: 125px;
+      border: 4px solid #333;">
+        <div class="row">
+          <div class="device device-iphone-x" style="margin-left: 30px;" data-aos = "fade-up" data-aos-duration = "1000">
+            <div class="device-frame">
+              <img class="device-content" src="Assets/app_demo_1.jpg">
+            </div>
+            <div class="device-stripe"></div>
+            <div class="device-header"></div>
+            <div class="device-sensors"></div>
+            <div class="device-btns"></div>
+            <div class="device-power"></div>
+          </div>
+
+          <div class="col-6 align-self-center"  style="margin-left: 30px;" data-aos = "fade-left">
+
+            <h1 class="phoneTitles">A New Way to Host A Hackathon</h1>
+
+            <p class="phoneDescription">With Procura do it all! From taking attendence to announcing winners, you can do it all from the app!</p>
+          </div>
+          
+        </div>
+
+      </div>
+
+      <img class="img-responsive" src="Assets/curve_bottom_div.png" style="margin-bottom: 0px; width: 100%;">
+      
 
 
   <div style="height: 300px;"></div>
