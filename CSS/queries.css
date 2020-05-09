@@ -1,0 +1,28 @@
+@media (max-width: 500px) {
+    .right {
+      display: none;
+    }
+  
+    .header-grid {
+      display: block;
+    }
+  
+  
+    .content-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+  
+    .youtube-video {
+      width: 100% !important;
+      height: 20vh !important;
+    }
+  
+    .member-grid, .banner-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+  
+    .contact-description {
+      width: 100%;
+    }
+  }
+  
