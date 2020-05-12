@@ -5,12 +5,16 @@
 
 html{
     scroll-behavior: smooth;
+    margin: 0px;
+    padding: 0px;
 }
 
 body{
     overflow-x: hidden;
     
     max-width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
 .headerBackground
@@ -54,7 +58,7 @@ body{
     font-weight: 500;
     border-width: 3px;
     
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: transparent;
     border-color: rgb(0, 255, 191);
     transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
@@ -69,6 +73,10 @@ body{
     transform: scale(1.1) perspective(1px);
     color: black;
 }   
+
+.learnMoreBtn:focus, input:focus{
+    outline: none;
+}
 
 .odometerBigText
 {
@@ -100,10 +108,21 @@ body{
     color: rgb(0, 255, 191);;
     font-weight: 500;
     border: none;
-    border-radius: 10px;
+    border-radius: 30px;
     background-color: transparent;
     border-color: rgb(88, 114, 107);
     transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.getStartedBtn:hover
+{
+    color: white;
+    font-weight: 500;
+    border: none;
+}
+
+.getStartedBtn:focus, input:focus{
+    outline: none;
 }
 
 
@@ -219,7 +238,7 @@ header
     bottom: 20%;
     font-size: 20px;
     font-weight: 500;
-    color: rgb(136, 136, 136);
+    color: rgb(109, 108, 108);
 }
 
 .learnMoreBtn1
@@ -230,7 +249,7 @@ header
     width: 150px;
     border-radius: 10px;
     color: black;
-    transition: border 0.5s ease-in-out, transform 0.3s ease-in-out, color 0.5s ease-in-out;
+    transition: border 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .learnMoreBtn1:hover
@@ -249,10 +268,27 @@ header
 
 .pricingOption-btn
 {
-    height: 50px;
-    width: 100px;
+    margin-top: 3px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 130px;
     background-color: white;
+    border: none;
+    border-radius: 20px;
     color: blueviolet;
+}
+
+.pricingOption-btn:focus, input:focus{
+    outline: none;
+}
+
+.features-section-main
+{
+    height: 700px;
+    width: 800px;
+    box-shadow: black;
+    background-color: wheat;
 }
 
 
