@@ -54,10 +54,9 @@ body{
 {
     height: 50px;
     width: 150px; 
-    color: rgb(0, 255, 191);;
+    color: rgb(0, 255, 191);
     font-weight: 500;
-    border-width: 3px;
-    
+    border: 2px solid rgb(0, 255, 191);
     border-radius: 30px;
     background-color: transparent;
     border-color: rgb(0, 255, 191);
@@ -266,7 +265,7 @@ header
     outline: none;
 }
 
-.pricingOption-btn
+.pricingOption-btn-nav
 {
     margin-top: 3px;
     height: 40px;
@@ -279,17 +278,136 @@ header
     color: blueviolet;
 }
 
-.pricingOption-btn:focus, input:focus{
+.pricingOption-btn-nav:focus, input:focus{
     outline: none;
 }
 
 .features-section-main
 {
     height: 700px;
-    width: 800px;
     box-shadow: black;
-    background-color: wheat;
+}
+
+.features-title-main
+{
+    font-size: 40px;
+    font-weight: 600;
+
+}
+
+.features-title
+{
+    font-size: 20px;
+    font-weight: 500;   
+    color: black;
+    margin-bottom: 0px;
+}
+
+.features-captions
+{
+    font-size: 18px;
+    color: #9fa9b6;
+}
+
+
+.size1{
+    height: 700px;
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    Box-shadow:0 10px 20px #f2f6ff, 0 22px 32px rgba(0,0,0,0.23); border-radius: 10px;
+    margin-top: 50px;
+    
+
+}
+
+.size2{
+    height: 700px;
+    width: 400px;
+    background-color: rgb(156, 103, 255);
+    Box-shadow:0 10px 20px #f2f6ff, 0 22px 32px rgba(0,0,0,0.23); border-radius: 10px;
+    margin-top: 50px;
+    
+
+}
+
+.features-pg-1
+{
+    height: 700px;
+    background-color: #f0f2f4;
+}
+
+.featureTitles
+{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.featureCaptions
+{
+    top: 50%;
+    bottom: 20%;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(136, 136, 136);
+}
+
+.learnMoreBtn1
+{
+    border: 2px solid black;
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    color: black;
+    transition: border 0.5s ease-in-out, transform 0.3s ease-in-out, color 0.5s ease-in-out;
+}
+
+.learnMoreBtn1:hover
+{
+    border: 2px solid #9e59f2;
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    color: #9e59f2;
+}
+
+.learnMoreBtn1:focus, input:focus{
+    outline: none;
+}
+
+.pricingOption-btn
+{
+    height: 50px;
+    width: 100px;
+    background-color: white;
+    color: blueviolet;
 }
 
 
 
+.pricing{
+    margin-left: 50px;
+    margin-top: 80px;
+}
+
+.priceop{
+    margin-left: 50px;
+}
+
+.features{
+    font-weight: bold;
+    font-size: 18px;
+}
+.features li:before{
+    content: "✓";
+}
+
+.button2{
+    transition: border-radius 0.3s ease-in-out;
+
+}
+
+.button2:hover{
+    border-radius: 50px;
+}
