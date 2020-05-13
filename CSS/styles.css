@@ -310,8 +310,8 @@ header
 
 
 .size1{
-    height: 700px;
-    width: 400px;
+    height: 590px;
+    width: 350px;
     background-color: rgb(255, 255, 255);
     Box-shadow:0 10px 20px #f2f6ff, 0 22px 32px rgba(0,0,0,0.23); border-radius: 10px;
     margin-top: 30px;
@@ -319,15 +319,7 @@ header
 
 }
 
-.size2{
-    height: 700px;
-    width: 400px;
-    background-color: rgb(156, 103, 255);
-    Box-shadow:0 10px 20px #f2f6ff, 0 22px 32px rgba(0,0,0,0.23); border-radius: 10px;
-    margin-top: 50px;
-    
 
-}
 
 .features-pg-1
 {
@@ -402,4 +394,16 @@ header
 
 .button2:hover{
     border-radius: 50px;
+}
+
+.features-card
+{
+    padding-top: 50px;
+    height: 280px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 
+    0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 20px;
+    padding-right: 20px;
 }
