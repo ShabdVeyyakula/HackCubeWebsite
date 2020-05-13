@@ -284,7 +284,6 @@ header
 
 .features-section-main
 {
-    height: 700px;
     box-shadow: black;
 }
 
@@ -315,7 +314,7 @@ header
     width: 400px;
     background-color: rgb(255, 255, 255);
     Box-shadow:0 10px 20px #f2f6ff, 0 22px 32px rgba(0,0,0,0.23); border-radius: 10px;
-    margin-top: 50px;
+    margin-top: 30px;
     
 
 }
@@ -382,13 +381,6 @@ header
     width: 100px;
     background-color: white;
     color: blueviolet;
-}
-
-
-
-.pricing{
-    margin-left: 50px;
-    margin-top: 80px;
 }
 
 .priceop{
