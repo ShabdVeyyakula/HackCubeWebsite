@@ -73,7 +73,7 @@
 					</div>
 
 					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" id="btnSignIn">
 							<p style="font-family: 'Roboto', sans-serif; color: white;">Sign In</p>
 						</button>
 					</div>
@@ -128,7 +128,31 @@
 
 		}
 
-		$("")
+		const txtEmail = document.getElementById("emailInput");
+		const txtPassword = document.getElementById("passInput");
+        const btnSignIn = document.getElementById("btnSignIn");
+
+        //Add login event
+        
+
+        btnSignIn.addEventListener('click', e => {
+            const email = txtEmail.value;
+            const pass = txtPassword.value;
+            const auth = firebase.auth();
+
+            const promise = auth.signInWithEmailAndPassword(email, pass);
+            promise
+                .catch(e => console.log(e.message));
+
+        });
+
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            if(firebase) {
+                console.log(firebaseUser);
+            } else {
+                console.log('not logged in')
+            }
+        }) 
 
 
 	</script>
