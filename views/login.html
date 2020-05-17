@@ -124,6 +124,8 @@
 			firebase.auth().signInWithPopup(base_provider).then(function (result) {
 				console.log(result);
 				console.log("Success, Google Account Linked")
+				window.location = "../views/layouts/dashboard.html"
+
 			}).catch(function (err) {
 				console.log(err)
 				console.log("Google Sign In Failed")
