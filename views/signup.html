@@ -152,7 +152,7 @@
 
         firebase.auth().onAuthStateChanged(firebaseUser => {
             if (firebaseUser) {
-                console.log(firebaseUser);
+                console.log(firebase);
                 window.location = "../views/layouts/dashboard.html"
             } else {
                 console.log('not logged in')

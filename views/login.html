@@ -152,7 +152,7 @@
 		});
 
 		firebase.auth().onAuthStateChanged(firebaseUser => {
-            if (firebaseUser) {
+            if (firebase) {
                 console.log(firebaseUser);
                 window.location = "../views/layouts/dashboard.html"
             } else {
