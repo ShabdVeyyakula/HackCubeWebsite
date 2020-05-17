@@ -102,25 +102,25 @@
 
 
 	<script>
-		var config = {
-			apiKey: "AIzaSyBAMRwMEvN4QwV0e1g_Kx43UFUNfY1Fxvo",
-			authDomain: "test-again-ebbfe.firebaseapp.com",
-			databaseURL: "https://test-again-ebbfe.firebaseio.com",
-			projectId: "test-again-ebbfe",
-			storageBucket: "test-again-ebbfe.appspot.com",
-			messagingSenderId: "208831167578",
-			appId: "1:208831167578:web:3474acabb862d5fa27ec63",
-			measurementId: "G-SX0MZ6L6X5"
+		var firebaseConfig = {
+			apiKey: "AIzaSyDZ9pYHurpHjpI33InoBi2ZJT_Fdu2Z10w",
+			authDomain: "hackerqmobile-newdatabase.firebaseapp.com",
+			databaseURL: "https://hackerqmobile-newdatabase.firebaseio.com/",
+			projectId: "hackerqmobile-newdatabase",
+			storageBucket: "hackerqmobile-newdatabase.appspot.com",
+			messagingSenderId: "462903816679",
+			appId: "1:462903816679:web:aac71517826ca6f094cd42",
+			measurementId: "G-1SVWFLQ5HH"
 		};
-		firebase.initializeApp(config);
+		firebase.initializeApp(firebaseConfig);
 
 
-		googleSignIn=()=> {
+		googleSignIn = () => {
 			base_provider = new firebase.auth.GoogleAuthProvider();
-			firebase.auth().signInWithPopup(base_provider).then(function(result){
+			firebase.auth().signInWithPopup(base_provider).then(function (result) {
 				console.log(result);
 				console.log("Success, Google Account Linked")
-			}).catch(function(err){
+			}).catch(function (err) {
 				console.log(err)
 				console.log("Google Sign In Failed")
 			})
@@ -130,29 +130,29 @@
 
 		const txtEmail = document.getElementById("emailInput");
 		const txtPassword = document.getElementById("passInput");
-        const btnSignIn = document.getElementById("btnSignIn");
+		const btnSignIn = document.getElementById("btnSignIn");
 
-        //Add login event
-        
+		//Add login event
 
-        btnSignIn.addEventListener('click', e => {
-            const email = txtEmail.value;
-            const pass = txtPassword.value;
-            const auth = firebase.auth();
 
-            const promise = auth.signInWithEmailAndPassword(email, pass);
-            promise
-                .catch(e => console.log(e.message));
+		btnSignIn.addEventListener('click', e => {
+			const email = txtEmail.value;
+			const pass = txtPassword.value;
+			const auth = firebase.auth();
 
-        });
+			const promise = auth.signInWithEmailAndPassword(email, pass);
+			promise
+				.catch(e => console.log(e.message));
 
-        firebase.auth().onAuthStateChanged(firebaseUser => {
-            if(firebase) {
-                console.log(firebaseUser);
-            } else {
-                console.log('not logged in')
-            }
-        }) 
+		});
+
+		firebase.auth().onAuthStateChanged(firebaseUser => {
+			if (firebase) {
+				console.log(firebaseUser);
+			} else {
+				console.log('not logged in')
+			}
+		})
 
 
 	</script>

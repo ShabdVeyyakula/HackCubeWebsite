@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Login</title>
+    <title>SignUp</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -53,8 +53,8 @@
                             Email
                         </span>
                     </div>
-                    <div class="wrap-input100 validate-input" >
-                        <input class="input100" type="text"  id="emailInput">
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" id="emailInput">
                         <span class="focus-input100"></span>
                     </div>
 
@@ -69,14 +69,27 @@
                         <input class="input100" type="password" name="pass" id="passInput">
                         <span class="focus-input100"></span>
                     </div>
+                    <div class="p-t-13 p-b-9">
+                        <span class="txt1">
+                            Repeat Password
+                        </span>
+
+
+                    </div>
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="password" name="pass" id="passInputRepeat">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <p style="color: red; font-size: 15px; font-family: 'Roboto', sans-serif; display: hidden;
+                    "></p>
 
                     <div class="container-login100-form-btn m-t-17">
-                        <button class="login100-form-btn"  id="btnSignUp">
+                        <button class="login100-form-btn" id="btnSignUp">
                             <p style="font-family: 'Roboto', sans-serif; color: white;">Sign Up</p>
                         </button>
                     </div>
 
-                    
+
                 </form>
             </div>
         </div>
@@ -89,17 +102,17 @@
 
 
     <script>
-        var config = {
-            apiKey: "AIzaSyBAMRwMEvN4QwV0e1g_Kx43UFUNfY1Fxvo",
-            authDomain: "test-again-ebbfe.firebaseapp.com",
-            databaseURL: "https://test-again-ebbfe.firebaseio.com",
-            projectId: "test-again-ebbfe",
-            storageBucket: "test-again-ebbfe.appspot.com",
-            messagingSenderId: "208831167578",
-            appId: "1:208831167578:web:3474acabb862d5fa27ec63",
-            measurementId: "G-SX0MZ6L6X5"
+        var firebaseConfig = {
+            apiKey: "AIzaSyDZ9pYHurpHjpI33InoBi2ZJT_Fdu2Z10w",
+            authDomain: "hackerqmobile-newdatabase.firebaseapp.com",
+            databaseURL: "https://hackerqmobile-newdatabase.firebaseio.com/",
+            projectId: "hackerqmobile-newdatabase",
+            storageBucket: "hackerqmobile-newdatabase.appspot.com",
+            messagingSenderId: "462903816679",
+            appId: "1:462903816679:web:aac71517826ca6f094cd42",
+            measurementId: "G-1SVWFLQ5HH"
         };
-        firebase.initializeApp(config);
+        firebase.initializeApp(firebaseConfig);
 
 
         googleSignIn = () => {
@@ -115,19 +128,21 @@
 
         }
 
-        
+
 
         const txtEmail = document.getElementById("emailInput");
-		const txtPassword = document.getElementById("passInput");
+        const txtPassword = document.getElementById("passInput");
         const btnSignUp = document.getElementById("btnSignUp");
+        const txtRepeat = document.getElementById("passInputRepeat")
 
         //Add login event
-        
+
 
         btnSignUp.addEventListener('click', e => {
             const email = txtEmail.value;
             const pass = txtPassword.value;
             const auth = firebase.auth();
+
 
             const promise = auth.createUserWithEmailAndPassword(email, pass);
             promise
@@ -136,12 +151,12 @@
         });
 
         firebase.auth().onAuthStateChanged(firebaseUser => {
-            if(firebase) {
+            if (firebase) {
                 console.log(firebaseUser);
             } else {
                 console.log('not logged in')
             }
-        })        
+        })
 
 
 
