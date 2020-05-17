@@ -71,7 +71,7 @@
                     </div>
 
                     <div class="container-login100-form-btn m-t-17">
-                        <button class="login100-form-btn" onclick="emailSignUp()">
+                        <button class="login100-form-btn" onclick="emailSignUp()" id="btnSignUp">
                             <p style="font-family: 'Roboto', sans-serif; color: white;">Sign Up</p>
                         </button>
                     </div>
@@ -115,26 +115,41 @@
 
         }
 
-        var email = document.getElementById("emailInput");
-        var password = document.getElementById("passInput");
+        
 
-        emailSignUp = () => {
+        const txtEmail = document.getElementById("emailInput");
+		const txtPassword = document.getElementById("passInput");
+        const btnSignUp = document.getElementById("btnSignUp");
 
-            var email = document.getElementById("emailInput");
-            var password = document.getElementById("passInput");
+        //Add login event
+        btnLogin.addEventListener('click', e => {
+            const email = textEmail.value;
+            const pass = txtPassword.value;
+            const auth = firebase.auth();
 
-            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // ...
-                console.log(errorCode);
-                console.log(errorMessage)
-            });
+            const promise = auth.signInWithEmailAndPassword(email, pass);
+            promise.catch(e => console.log(e.message));
+        })
 
+        btnSignUp.addEventListener('click', e => {
+            const email = textEmail.value;
+            const pass = txtPassword.value;
+            const auth = firebase.auth();
 
+            const promise = auth.createUserWithEmailAndPassword(email, pass);
+            promise
+                .catch(e => console.log(e.message));
 
-        }
+        });
+
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            if(firebase) {
+                console.log(firebaseUser);
+            } else {
+                console.log('not logged in')
+            }
+        })        
+
 
 
 
