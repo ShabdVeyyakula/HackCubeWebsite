@@ -122,14 +122,7 @@
         const btnSignUp = document.getElementById("btnSignUp");
 
         //Add login event
-        btnLogin.addEventListener('click', e => {
-            const email = textEmail.value;
-            const pass = txtPassword.value;
-            const auth = firebase.auth();
-
-            const promise = auth.signInWithEmailAndPassword(email, pass);
-            promise.catch(e => console.log(e.message));
-        })
+        
 
         btnSignUp.addEventListener('click', e => {
             const email = textEmail.value;
