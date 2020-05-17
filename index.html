@@ -4,6 +4,8 @@
 <!--HEAD-->
 
 <head>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=5, minimal-ui">
@@ -50,260 +52,287 @@
 
 <body>
 
+
+
   <!--NAVBAR-->
-  <div class="headerBackground">
+  <style>
+    .navbar-default {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #400072;
+    }
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-custom" style="background-color: #400072;">
-      <a class="navbar-brand" href="#" style="color: white; font-size: 30px; font-weight: 630;">Procura</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-        style="color: honeydew;">
-        <span class="navbar-toggler-icon" style="color: honeydew;"></span>
-      </button>
+    li {
+      float: left;
+    }
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: white;">
-        <ul class="navbar-nav mr" style="color: white;">
-          <li class="nav-item active" style="color: white;">
-            <a class="nav-link" href="#" style="color: rgb(204, 204, 204); font-size: 20px; font-weight: 630;">Home
-              <span class="sr-only">(current)</span></a>
-          </li>
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+  </style>
+  </head>
 
-          <li>
-            <div style="width: 20px;"></div>
-          </li>
+  <body>
 
-          <li class="nav-item">
-            <a class="nav-link" href="#" style="color: rgb(204, 204, 204); font-size: 20px; font-weight: 630;">Info</a>
-          </li>
+    <ul class="navbar-default" id="navbar">
+      <li><a class="active" href="#home" style="font-size: ;">Procura</a></li>
+      <li><a href="#news">Features</a></li>
+      <li><a href="#contact">Plans</a></li>
+      <li><a href="#about">More Information</a></li>
+      <li><button id="myBtn">Contact Us!</button></li>
+    </ul>
 
-          <li>
-            <div style="width: 20px;"></div>
-          </li>
+    <style>
+      @media screen and (max-width: 580px) {
+        #navbar {
+          padding: 20px 10px !important;
+        }
 
-          <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1"
-              style="color: rgb(204, 204, 204); font-size: 20px; font-weight: 630;">Download</a>
-          </li>
+        #navbar a {
+          float: none;
+          display: block;
+          text-align: left;
+        }
 
-          <li>
-            <div style="width: 20px;"></div>
-          </li>
+        #navbar-right {
+          float: none;
+        }
+      }
+    </style>
+
+    <!--HEADER-->
+
+    <section class="header" style="background-color: #400072;">
+      <div class="placeholder" style="height: 40px;"></div>
+      <div class="container-fluid">
+
+        <div class="d-flex justify-content-center">
+
+          <div class="row h-30">
+
+            <div class="d-flex flex-column" data-aos="fade-up">
+
+              <h1 class="mainTitle">MANAGE <br> YOUR <br> HACKATHON <br> TODAY</h1>
+
+              <h1 class="header-dscrp">Procura makes managing hackathons a <br> breeze. From taking attendence to making
+                <br> announcements, Procura does it all.</h1>
+
+              <span class="placeholder" style="height: 20px;"></span>
+
+              <div class="row">
+
+                <button class="learnMoreBtn" href="#statsSection">Learn More →</button>
+
+                <span class="placeholder" style="width: 20px;"></span>
+
+                <a href="#overallFeatures"><button class="getStartedBtn">Get Started</button></a>
 
 
-          <li class="nav-item">
-            <button class="pricingOption-btn-nav" href="#" tabindex="-1">PRICING</button>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+              </div>
 
-  <!--HEADER-->
 
-  <section class="header" style="background-color: #400072;">
-    <div class="placeholder" style="height: 40px;"></div>
-    <div class="container-fluid">
 
-      <div class="d-flex justify-content-center">
-
-        <div class="row h-30">
-
-          <div class="d-flex flex-column" data-aos="fade-up">
-
-            <h1 class="mainTitle">MANAGE <br> YOUR <br> HACKATHON <br> TODAY</h1>
-
-            <h1 class="header-dscrp">Procura makes managing hackathons a <br> breeze. From taking attendence to making
-              <br> announcements, Procura does it all.</h1>
-
-            <span class="placeholder" style="height: 20px;"></span>
-
-            <div class="row">
-
-              <button class="learnMoreBtn" href="#statsSection">Learn More →</button>
-
-              <span class="placeholder" style="width: 20px;"></span>
-
-              <a href="#overallFeatures"><button class="getStartedBtn">Get Started</button></a>
-
-              
             </div>
 
+            <span class="placeholder" style="width: 70px;"></span>
 
+            <img src="Assets/header_clipart.png" style="height: 450px; width: 450px;" data-aos="fade-left"
+              data-aos-delay="200">
 
           </div>
 
-          <span class="placeholder" style="width: 70px;"></span>
-
-          <img src="Assets/header_clipart.png" style="height: 450px; width: 450px;" data-aos="fade-left"
-            data-aos-delay="200">
-
         </div>
+
+        <div class="placeholder" style="height: 60px;"></div>
 
       </div>
 
-      <div class="placeholder" style="height: 60px;"></div>
 
-    </div>
+    </section>
 
-    
-  </section>
+    <!--BOTTOM CURVE-->
 
-  <!--BOTTOM CURVE-->
+    <img src="Assets/bottomcurve.png" class="img-fluid" />
 
-  <img src="Assets/bottomcurve.png" class="img-fluid" />
-
-  <div style="height: 200px;"></div>
-
-  
+    <div style="height: 200px;"></div>
 
 
 
-  <!-- FEATURES SCREEN-->
-
-  <section class="bg-white py-10">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <img src="Assets/listing_icon.png" height="90px" width="90px" class="img-fluid">
-              <div class="descriptionTitle" style="font-size: 22px;">Post Hackathon Listing</div>
-              <p style="align-items: center;">Our listing system allows you to advertise your <br> hackathon. This makes it
-                accessable to <br> more hackers, way to boost your popularity!</p>
-            </div>
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <img src="Assets/speaker_icon.png" height="90px" width="90px" class="img-fluid">
-              <div class="descriptionTitle" style="font-size: 22px;">Real Time Announcements</div>
-              <p style="align-items: center;">It doesn't matter which corner of the room your<br>hackers are. Push
-                announcements in real time so that <br> everyone knows what to do! <br> Communication is key!</p>
-            </div>
-            <div class="col-lg-4">
-              <img src="Assets/servers_icon.png" height="90px" width="90px" class="img-fluid">
-              <div class="descriptionTitle" style="font-size: 22px;">Fast & Reliable Servers</div>
-              <p style="align-items: center;">We provide our users with fast and reliable<br>information so that everyone
-                can stay updated!<br>Speed is key!</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 
-  <div style="height: 300px;"></div>
+    <!-- FEATURES SCREEN-->
 
-
-  <!-- FEATURES SECTION 1-->
-
-  <div class="features-pg-1">
-    <div class="d-flex justify-content-center">
-      <div class="row justify-content-center align-self-center" style="width: 400px;">
-        <div class="col">
-          <h1 class="featureTitles">A New Way to Host Hackathons</h1>
-
-          <p class="featureCaptions">With Procura, you can do it all! From taking attendence to announcing <br> winners,
-            you can do it all from the app! Its all easy, get started now!</p>
-
-
-          <a href = "#mainFeatures"><button class="learnMoreBtn1" >View Features</button></a>
-
-        </div>
-
-      </div>
-
-      <span class="placeholder" style="width: 60px;"></span>
-
-      <img src="Assets/iphone_mockup_feature1.png" height="670px">
-    </div>
-
-  </div>
-
-  <div style="height: 50px;"></div>
-
-
-  <!-- FEATURES SECTION MAIN-->
-
-  <div class="features-section-main" style="margin-left: 20px; margin-right: 20px;" id = "mainFeatures">
-    <div class="d-flex justify-content-center">
+    <section class="bg-white py-10">
       <div class="container">
+        <div class="row text-center">
+          <div class="col-lg-4 mb-5 mb-lg-0" data-aos="zoom-in">
+            <img src="Assets/listing_icon.png" height="90px" width="90px" class="img-fluid">
+            <div class="descriptionTitle" style="font-size: 22px;">Post Hackathon Listing</div>
+            <p style="align-items: center;">Our listing system allows you to advertise your <br> hackathon. This makes
+              it
+              accessable to <br> more hackers, way to boost your popularity!</p>
+          </div>
+          <div class="col-lg-4 mb-5 mb-lg-0" data-aos="zoom-in">
+            <img src="Assets/speaker_icon.png" height="90px" width="90px" class="img-fluid">
+            <div class="descriptionTitle" style="font-size: 22px;">Real Time Announcements</div>
+            <p style="align-items: center;">It doesn't matter which corner of the room your<br>hackers are. Push
+              announcements in real time so that <br> everyone knows what to do! <br> Communication is key!</p>
+          </div>
+          <div class="col-lg-4" data-aos="zoom-in">
+            <img src="Assets/servers_icon.png" height="90px" width="90px" class="img-fluid">
+            <div class="descriptionTitle" style="font-size: 22px;">Fast & Reliable Servers</div>
+            <p style="align-items: center;">We provide our users with fast and reliable<br>information so that everyone
+              can stay updated!<br>Speed is key!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div style="height: 300px;"></div>
+
+
+    <!-- FEATURES SECTION 1-->
+
+    <div class="features-pg-1">
+      <div class="d-flex justify-content-center">
+        <div class="row justify-content-center align-self-center" style="width: 400px;">
+          <div class="col">
+            <h1 class="featureTitles" data-aos="fade-right">A New Way to Host Hackathons</h1>
+
+            <p class="featureCaptions" data-aos="fade-right">With Procura, you can do it all! From taking attendence to
+              announcing <br>
+              winners,
+              you can do it all from the app! Its all easy, get started now!</p>
+
+
+            <a href="#mainFeatures"><button class="learnMoreBtn1" data-aos="fade-right">View Features</button></a>
+
+          </div>
+
+        </div>
+
+        <span class="placeholder" style="width: 60px;"></span>
+
+        <img src="Assets/iphone_mockup_feature1.png" height="670px" data-aos="fade-down">
+      </div>
+
+    </div>
+
+    <div style="height: 50px;"></div>
+
+
+    <!-- FEATURES SECTION MAIN-->
+
+    <div class="features-section-main" style="margin-left: 20px; margin-right: 20px;" id="mainFeatures">
+      <div class="d-flex justify-content-center">
+        <div class="container">
 
           <div style="height: 30px;"></div>
-  
+
           <div class="d-flex justify-content-center">
-  
-            
-  
+
+
+
             <h1 class="features-title-main">Procura Features</h1>
           </div>
-          
-  
+
+
           <div style="height: 50px;"></div>
-  
+
           <div class="row">
 
             <div class="col-lg-4 col-md-6 mb-5 aos-init aos-animate" data-aos="fade-up">
-              <a class="card text-center text-decoration-none h-100 lift" href="#!"><div class="card-body py-5">
-                <img src="Assets/speaker_icon.png" height="80px">
-                <p class="features-title">Send Announcements</p>
-                <p class="features-captions">Push announcements to your attendees in realtime, to make sure everyone is updated. </p>
-                  </div></a>
-          </div>
-          
+              <a class="card text-center text-decoration-none h-100 lift" href="#!">
+                <div class="card-body py-5">
+                  <img src="Assets/speaker_icon.png" height="80px">
+                  <p class="features-title">Send Announcements</p>
+                  <p class="features-captions">Push announcements to your attendees in realtime, to make sure everyone
+                    is updated. </p>
+                </div>
+              </a>
+            </div>
+
 
             <div class="col-lg-4 col-md-6 mb-5 aos-init aos-animate" data-aos="fade-up">
-              <a class="card text-center text-decoration-none h-100 lift" href="#!"><div class="card-body py-5">
-                <img src="Assets/speaker_icon.png" height="80px">
-                <p class="features-title">Take attendence</p>
-                <p class="features-captions">Keep track of your hackers using our attendence feature. Use the scanner to scan tickets or just mark them manually.</p>
-                  </div></a>
+              <a class="card text-center text-decoration-none h-100 lift" href="#!">
+                <div class="card-body py-5">
+                  <img src="Assets/speaker_icon.png" height="80px">
+                  <p class="features-title">Take attendence</p>
+                  <p class="features-captions">Keep track of your hackers using our attendence feature. Use the scanner
+                    to scan tickets or just mark them manually.</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-5 aos-init aos-animate" data-aos="fade-up">
+              <a class="card text-center text-decoration-none h-100 lift" href="#!">
+                <div class="card-body py-5">
+                  <img src="Assets/speaker_icon.png" height="80px">
+                  <p class="features-title">Post Listing</p>
+                  <p class="features-captions">Post your hackathon on our listing, this makes sure that everyone can see
+                    it on the homepage. Get more signups. </p>
+                </div>
+              </a>
+            </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 mb-5 aos-init aos-animate" data-aos="fade-up">
-            <a class="card text-center text-decoration-none h-100 lift" href="#!"><div class="card-body py-5">
-              <img src="Assets/speaker_icon.png" height="80px">
-              <p class="features-title">Post Listing</p>
-              <p class="features-captions">Post your hackathon on our listing, this makes sure that everyone can see it on the homepage. Get more signups. </p>
-                </div></a>
-        </div>
+          <div class="row">
+
+            <div class="col-lg-4 col-md-6 mb-5 aos-init aos-animate" data-aos="fade-up">
+              <a class="card text-center text-decoration-none h-100 lift" href="#!">
+                <div class="card-body py-5">
+                  <img src="Assets/speaker_icon.png" height="80px">
+                  <p class="features-title">Chat with Hackers</p>
+                  <p class="features-captions">Using our chat feature, you can freely chat with your attendees about
+                    anything! Just join the hackathon and viola! </p>
+                </div>
+              </a>
+            </div>
+
+
+            <div class="col-lg-4 col-md-6 mb-5 aos-init aos-animate" data-aos="fade-up">
+              <a class="card text-center text-decoration-none h-100 lift" href="#!">
+                <div class="card-body py-5">
+                  <img src="Assets/speaker_icon.png" height="80px">
+                  <p class="features-title">Join Teams</p>
+                  <p class="features-captions">Your hackers can easily set up and join teams. This makes judging easier
+                    and keeps things better organized and efficient.</p>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-5 aos-init aos-animate" data-aos="fade-up">
+              <a class="card text-center text-decoration-none h-100 lift" href="#!">
+                <div class="card-body py-5">
+                  <img src="Assets/speaker_icon.png" height="80px">
+                  <p class="features-title">FILL OUT</p>
+                  <p class="features-captions">Post your hackathon on our listing, this makes sure that everyone can see
+                    it on the homepage. Get more signups. </p>
+                </div>
+              </a>
+            </div>
+
           </div>
 
-        <div class="row">
-
-          <div class="col-lg-4 col-md-6 mb-5 aos-init aos-animate" data-aos="fade-up">
-            <a class="card text-center text-decoration-none h-100 lift" href="#!"><div class="card-body py-5">
-              <img src="Assets/speaker_icon.png" height="80px">
-              <p class="features-title">Chat with Hackers</p>
-              <p class="features-captions">Using our chat feature, you can freely chat with your attendees about anything! Just join the hackathon and viola! </p>
-                </div></a>
-        </div>
-        
-
-          <div class="col-lg-4 col-md-6 mb-5 aos-init aos-animate" data-aos="fade-up">
-            <a class="card text-center text-decoration-none h-100 lift" href="#!"><div class="card-body py-5">
-              <img src="Assets/speaker_icon.png" height="80px">
-              <p class="features-title">Join Teams</p>
-              <p class="features-captions">Your hackers can easily set up and join teams. This makes judging easier and keeps things better organized and efficient.</p>
-                </div></a>
         </div>
 
-        <div class="col-lg-4 col-md-6 mb-5 aos-init aos-animate" data-aos="fade-up">
-          <a class="card text-center text-decoration-none h-100 lift" href="#!"><div class="card-body py-5">
-            <img src="Assets/speaker_icon.png" height="80px">
-              <p class="features-title">FILL OUT</p>
-              <p class="features-captions">Post your hackathon on our listing, this makes sure that everyone can see it on the homepage. Get more signups. </p>
-              </div></a>
       </div>
-
-          </div>
-
-      </div>
-      
-      </div>
-  </div>
+    </div>
 
 
 
-  <!-- FEATURES SECTION 2-->
+    <!-- FEATURES SECTION 2-->
 
 
 
-  <!--
+    <!--
 <div class="features-pg-1">
     <div class="d-flex justify-content-center">
         <div class="row">
@@ -337,9 +366,9 @@
 
 
 
-  <!--STATS SECTION-->
+    <!--STATS SECTION-->
 
-  <!--
+    <!--
 
 
 
@@ -406,8 +435,8 @@
   </div>
   -->
 
-  <!--FEATURES SECTION 1-->
-  <!--
+    <!--FEATURES SECTION 1-->
+    <!--
 
 
  
@@ -448,35 +477,36 @@
 
  -->
 
- <!-- PRICING SECTION-->
+    <!-- PRICING SECTION-->
 
- <div style="height: 250px;"></div>
+    <div style="height: 250px;"></div>
 
 
- <div class="container">
-   <div class="container">
-     <div class="col-xs-1" align="center">
-      <h1 style="font-size: 70px;">The right plan for your needs.</h1>
+    <div class="container">
+      <div class="container">
+        <div class="col-xs-1" align="center">
+          <h1 style="font-size: 70px;">The right plan for your needs.</h1>
 
-      <p style="color: black; font-size: 20px; width: 600px;">
-        Start hosting your hackathons with this easy to use software.  Get in touch with all your attendees and make sure they are all in track.
-      </p>
+          <p style="color: black; font-size: 20px; width: 600px;">
+            Start hosting your hackathons with this easy to use software. Get in touch with all your attendees and make
+            sure they are all in track.
+          </p>
 
-     </div>
-    
-   </div>
- </div>
+        </div>
+
+      </div>
+    </div>
 
     <div class="container" style="align-items: center;">
-    <div class="row">
+      <div class="row">
 
-      <!--LITE PLAN-->
-      
+        <!--LITE PLAN-->
+
         <div class="col" style="padding-top: 40px;">
           <h1 style="font-weight: bold;"> Lite </h1>
           <p style="color: black; font-size: 15px; font-weight: bold;">For those organizing their first hackathons</p>
-          <div class="size1">
-            
+          <div class="size1" data-aos="zoom-in">
+
             <h1 style="font-weight: bold; font-size: 40px; margin-left: 20px; padding-top: 20px;">FREE</h1>
 
             <p style="color: black; margin-left: 20px;">Get started with the lite version</p>
@@ -499,84 +529,90 @@
               </li>
             </ul>
             <center style="margin-top: 185px">
-              <button style="width: 320px; height: 50px; border: 2px solid black; background-color: transparent; font-size: 20px; color: black; " class="button2">
-                Get started!
-  
-  
-              </button>
+              <a href="./routes/login.html"><button
+                  style="width: 320px; height: 50px; border: 2px solid black; background-color: transparent; font-size: 20px; color: black; margin-top: 180px; "
+                  class="button2">
+                  Get started!
+
+
+                </button></a>
             </center>
 
             <div>
+            </div>
           </div>
         </div>
-      </div>
 
-       <!--PREMIUM PLAN-->
+        <!--PREMIUM PLAN-->
 
-      <div class="col" style="padding-top: 40px;">
-        <h1 style="font-weight: bold;"> Premium </h1>
-        <p style="color: black; font-size: 15px; font-weight: bold;">Get access to all premium features</p>
-        <div class="size1">
-          
-          <h1 style="font-weight: bold; font-size: 40px; margin-left: 20px; padding-top: 20px; display: flex;">
-            <p style="color:black; font-weight: bold; font-size: 22px;">$ </p>8.99
-          </h1>
+        <div class="col" style="padding-top: 40px;">
+          <h1 style="font-weight: bold;"> Premium </h1>
+          <p style="color: black; font-size: 15px; font-weight: bold;">Get access to all premium features</p>
+          <div class="size1" data-aos="zoom-in">
 
-          <p style="color: black; margin-left: 20px;">Enjoy all the benefits, pay once to create one hackathon</p>
+            <h1 style="font-weight: bold; font-size: 40px; margin-left: 20px; padding-top: 20px; display: flex;">
+              <p style="color:black; font-weight: bold; font-size: 22px;">$ </p>8.99
+            </h1>
 
-          <ul style="list-style: none;" class="features">
-            <li>
-              Unlimited Members
-            </li>
-            <li>
-              Push notifcation when food arrives etc.
-            </li>
-            <li>
-              Display general hackathon information
-            </li>
-            <li>
-              Take attendence
-            </li>
-            <li>
-              Team building for attendees
-            </li>
-            <li>
-              Hosting agenda info w/ notifcations
-            </li>
-            <li>
-              Live announcements
-            </li>
-            <li>
-              One premium hackathon
-            </li>
-          </ul>
-          <center style="margin-top: 79px">
-            <button style="width: 320px; height: 50px; border: 2px solid black; background-color: transparent; font-size: 20px; color: black; " class="button2">
-              Get started!
+            <p style="color: black; margin-left: 20px;">Enjoy all the benefits, pay once to create one hackathon</p>
+
+            <ul style="list-style: none;" class="features">
+              <li>
+                Unlimited Members
+              </li>
+              <li>
+                Push notifcation when food arrives etc.
+              </li>
+              <li>
+                Display general hackathon information
+              </li>
+              <li>
+                Take attendence
+              </li>
+              <li>
+                Team building for attendees
+              </li>
+              <li>
+                Hosting agenda info w/ notifcations
+              </li>
+              <li>
+                Live announcements
+              </li>
+              <li>
+                One premium hackathon
+              </li>
+            </ul>
+            <center style="margin-top: 79px">
+              <a href="./routes/login.html"><button
+                  style="width: 320px; height: 50px; border: 2px solid black; background-color: transparent; font-size: 20px; color: black; margin-top: 75px; "
+                  class="button2">
+                  Get started!
 
 
-            </button>
-          </center>
+                </button></a>
+            </center>
 
-          <div>
+            <div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!--MONTHLY PLAN-->
+        <!--MONTHLY PLAN-->
 
-    <div class="col" style=" padding-top: 40px;">
-      <h1 style="font-weight: bold;"> Monthly <span class="badge badge-warning">Popular</span> </h1>
-      <p style="color: black; font-size: 15px; font-weight: bold;">Best for frequent hackathon hosters</p>
-      <div class="size1" style="background-color: #9c67ff;">
-        
-        <h1 style="font-weight: bold; font-size: 40px; margin-left: 20px; padding-top: 20px; display: flex; color: white;">
-          <p style="color:white; font-weight: bold; font-size: 22px;">$ </p> 4.99  <p style="color:white; font-weight: bold; font-size: 22px; margin-top: 14px;"> /m </p>
-        </h1>
+        <div class="col" style=" padding-top: 40px;">
+          <h1 style="font-weight: bold;"> Monthly <span class="badge badge-warning">Popular</span> </h1>
+          <p style="color: black; font-size: 15px; font-weight: bold;">Best for frequent hackathon hosters</p>
+          <div class="size1" style="background-color: #9c67ff;" data-aos="zoom-in">
 
-        <p style="color: white; margin-left: 20px;">Host hackathons more frequently <br> with a great price!</p>
+            <h1
+              style="font-weight: bold; font-size: 40px; margin-left: 20px; padding-top: 20px; display: flex; color: white;">
+              <p style="color:white; font-weight: bold; font-size: 22px;">$ </p> 4.99 <p
+                style="color:white; font-weight: bold; font-size: 22px; margin-top: 14px;"> /m </p>
+            </h1>
 
-        <ul style="list-style: none; color: white;" class="features">
+            <p style="color: white; margin-left: 20px;">Host hackathons more frequently <br> with a great price!</p>
+
+            <ul style="list-style: none; color: white;" class="features">
               <li>
                 Unlimited Members
               </li>
@@ -602,118 +638,298 @@
                 Unlimited Hackathons per month
               </li>
             </ul>
-        <center style="margin-top: 65px">
-          <button style="width: 320px; height: 50px; border: 2px solid white; background-color: transparent; font-size: 20px; color: white; " class="button2">
-            Get started!
+            <center style="margin-top: 65px">
+              <a href="./routes/login.html">
+                <button
+                  style="width: 320px; height: 50px; border: 2px solid white; background-color: transparent; font-size: 20px; color: white; margin-top: 65px; "
+                  class="button2">
+                  Get started!
 
 
-          </button>
-        </center>
+                </button></a>
+            </center>
 
-        <div>
-      </div>
-    </div>
-  </div>
-
-      </div>
-    </div>
- 
-
-  <div style="height: 200px;"></div>
-
-
-  <!--DOWNLOAD SECTION-->
-
-
-  <div class="container-fluid" style="width: 100%; background-color: #eff3f9;">
-
-    <div class="d-flex flex-column">
-
-      <span style="height: 20px;"></span>
-
-      <div class="d-flex justify-content-center" style="font-size: 25px; font-weight: 600; color: black;">Get Started
-        Now!</div>
-        
-      <div class="row justify-content-md-center">
-        <img src="Assets/google-play-badge.png" class="img-responsive" height="90px">
-        <img src="Assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" height="65px" class="img-responsive"
-          style="margin-top: 11px;">
-      </div>
-    </div>
-  </div>
-  </div>
-
-
-
-
-
-
-</body>
-
-
-
-<!--FOOTER-->
-
-<div class="footer pt-10 pb-5 mt-auto bg-dark footer-dark" style="background-color: #1F2D41; width: 100%; flex: 1;">
-
-  <div class="container">
-    <div style="height: 100px;" class="placeholder"></div>
-
-    <div class="d-flex justify-content-center">
-
-      <div class="col-md-13">
-        <div class="row">
-
-          <div class="col">
-            <h1 class="footerMainTitle">Procura</h1>
-
-            <h1 class="footerText">Xeon Developers</h1>
+            <div>
+            </div>
           </div>
-
-          <span style="height: 20px;"> </span>
-
-          <div class="col justify-content-lg-center">
-            <h1 class="footerTitles">Product</h1>
-
-            <h1 class="footerText">Documentation</h1>
-            <h1 class="footerText">Download</h1>
-            <h1 class="footerText"></h1>
-          </div>
-
-          <span style="height: 20px;"></span>
-
-          <div class="col">
-            <h1 class="footerTitles">Customer</h1>
-
-            <h1 class="footerText">Contact</h1>
-
-            <h1 class="footerText">Report</h1>
-          </div>
-
-          <div class="col">
-            <h1 class="footerTitles">Legal</h1>
-
-            <h1 class="footerText">Terms & Conditions</h1>
-
-            <h1 class="footerText">Credits</h1>
-
-            <h1 class="footerText">Privacy Policy</h1>
-          </div>
-
-
-
         </div>
 
-        <div class="d-flex justify-content-center">
+      </div>
+    </div>
 
-          <h1 class="footerText" style="margin-top: 30px;">© 2020 Xeon Developers. All rights reserved</h1>
+
+    <div style="height: 200px;"></div>
+
+
+    <!--DOWNLOAD SECTION-->
+
+
+    <div class="container-fluid" style="width: 100%; background-color: #eff3f9;" data-aos="fade-right">
+
+      <div class="d-flex flex-column">
+
+        <span style="height: 20px;"></span>
+
+        <div class="d-flex justify-content-center" style="font-size: 25px; font-weight: 600; color: black;">Get Started
+          Now!</div>
+
+        <div class="row justify-content-md-center">
+          <img src="Assets/google-play-badge.png" class="img-responsive" height="90px">
+          <img src="Assets/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" height="65px"
+            class="img-responsive" style="margin-top: 11px;">
         </div>
       </div>
-
     </div>
+    </div>
+
+
+
+
+
+
+  </body>
+
+
+
+  <!--FOOTER-->
+
+  <div class="footer pt-10 pb-5 mt-auto bg-dark footer-dark" style="background-color: #1F2D41; width: 100%; flex: 1;">
+
+    <div class="container">
+      <div style="height: 100px;" class="placeholder"></div>
+
+      <div class="d-flex justify-content-center">
+
+        <div class="col-md-13">
+          <div class="row">
+
+            <div class="col">
+              <h1 class="footerMainTitle">Procura</h1>
+
+              <h1 class="footerText">Xeon Developers</h1>
+            </div>
+
+            <span style="height: 20px;"> </span>
+
+            <div class="col justify-content-lg-center">
+              <h1 class="footerTitles">Product</h1>
+
+              <h1 class="footerText">Documentation</h1>
+              <h1 class="footerText">Download</h1>
+              <h1 class="footerText"></h1>
+            </div>
+
+            <span style="height: 20px;"></span>
+
+            <div class="col">
+              <h1 class="footerTitles">Customer</h1>
+
+              <h1 class="footerText">Contact</h1>
+
+              <h1 class="footerText">Report</h1>
+            </div>
+
+            <div class="col">
+              <h1 class="footerTitles">Legal</h1>
+
+              <h1 class="footerText">Terms & Conditions</h1>
+
+              <h1 class="footerText">Credits</h1>
+
+              <h1 class="footerText">Privacy Policy</h1>
+            </div>
+
+
+
+          </div>
+
+          <div class="d-flex justify-content-center">
+
+            <h1 class="footerText" style="margin-top: 30px;">© 2020 Xeon Developers. All rights reserved</h1>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* The Modal (background) */
+      .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+      }
+
+      /* Modal Content */
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+
+      /* The Close Button */
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    </style>
+    </head>
+
+    <body>
+
+      <!-- Trigger/Open The Modal -->
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal" style="background-image: url(../Assets/china-5151605.jpg);">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h1>Contact Us!</h1>
+          <h2>Name:</h2>
+          <input type="text" class="inputType1" id="nameInput">
+          <h2>Email:</h2>
+          <input type="text" class="inputType1" id="emailInput">
+          <h2>Message:</h2>
+          <input type="text" class="inputType2" id="messageInput">
+          <button class="contactUsbtn" onclick="writeUserData()">Contact Us</button>
+
+        </div>
+        <style>
+          .inputType1 {
+            height: 50px;
+            width: 700px;
+          }
+
+          .inputType2 {
+            width: 700px;
+            height: 200px;
+          }
+
+          .contactUsbtn {
+            height: 60px;
+            margin-top: 40px;
+            border: none;
+            border-radius: 10px;
+            width: 400px;
+            transition: background-color 0.3s ease-in-out, border-radius 0.3s ease-in-out;
+            background-color: #fc66ff;
+
+
+          }
+
+          .contactUsbtn:hover {
+            background-color: linear-gradient(45deg, #00dbde, #fc00ff);
+            border-radius: 30px;
+
+
+          }
+        </style>
+      </div>
+
+      <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+          modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+          modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        }
+      </script>
+
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+      <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+      <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
+      <script>
+
+
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBAMRwMEvN4QwV0e1g_Kx43UFUNfY1Fxvo",
+          authDomain: "test-again-ebbfe.firebaseapp.com",
+          databaseURL: "https://test-again-ebbfe.firebaseio.com",
+          projectId: "test-again-ebbfe",
+          storageBucket: "test-again-ebbfe.appspot.com",
+          messagingSenderId: "208831167578",
+          appId: "1:208831167578:web:3474acabb862d5fa27ec63",
+          measurementId: "G-SX0MZ6L6X5"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+
+        var email = document.getElementById('emailInput').value;
+        var name = document.getElementById('nameInput').value;
+        var message = document.getElementById('messageInput').value;
+
+        function writeUserData(name, email, message, ) {
+          firebase.database().ref('webUserMessage/' + name).set({
+            name: name,
+            email: email,
+            message: message
+          });
+        }
+
+
+      </script>
   </div>
 
-
-</div>
 
 </html>
