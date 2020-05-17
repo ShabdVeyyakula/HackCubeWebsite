@@ -151,8 +151,9 @@
         });
 
         firebase.auth().onAuthStateChanged(firebaseUser => {
-            if (firebase) {
+            if (firebaseUser) {
                 console.log(firebaseUser);
+                window.location = "../views/layouts/dashboard.html"
             } else {
                 console.log('not logged in')
             }
@@ -165,7 +166,7 @@
     </script>
 
 
-
+<link rel="stylesheet" href="../views/layouts/dashboard.html">
 </body>
 
 </html>

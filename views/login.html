@@ -152,13 +152,13 @@
 		});
 
 		firebase.auth().onAuthStateChanged(firebaseUser => {
-			if (firebase) {
-				console.log(firebaseUser);
-			} else {
-				console.log('not logged in')
-				document.getElementById("alert").style.display = "visible"
-			}
-		})
+            if (firebaseUser) {
+                console.log(firebaseUser);
+                window.location = "../views/layouts/dashboard.html"
+            } else {
+                console.log('not logged in')
+            }
+        })
 
 
 	</script>
