@@ -17,17 +17,7 @@
 </head>
 
 <body>
-	<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
-
-	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
-
-	<!-- Add Firebase products that you want to use -->
-	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
 
 
 	<div class="limiter">
@@ -44,11 +34,12 @@
 						<p style="font-family: 'Roboto', sans-serif; color: white;">Facebook</p>
 					</a>
 
+
 					<a href="#" class="btn-google m-b-20" style="text-decoration: none;" onclick="googleSignIn()">
 						<img src="../Assets/icon-google.png">
 						<p style="font-family: 'Roboto', sans-serif; color: black;">Google</p>
 					</a>
-					<div class="alert alert-danger" role="alert" style="visibility: hidden;" id="alert"><strong>Oops!</strong>Email and Password dont Match</div>
+
 
 
 					<div class="p-t-31 p-b-9">
@@ -74,6 +65,10 @@
 						<input class="input100" type="password" name="pass">
 						<span class="focus-input100"></span>
 					</div>
+					<div class="alert alert-danger" role="alert" id="alert"
+						style="margin-top: 20px; width: 600px; "><strong>Oops!</strong>Email and Password
+						dont Match</div>
+
 
 					<div class="container-login100-form-btn m-t-17">
 						<button class="login100-form-btn" id="btnSignIn">
@@ -86,7 +81,7 @@
 							Not a member?
 						</span>
 
-						<a href="../routes/signup.html" class="txt2 bo1">
+						<a href="../views/signup.html" class="txt2 bo1">
 							Sign up now
 						</a>
 					</div>
@@ -97,11 +92,17 @@
 
 
 	<div id="dropDownSelect1"></div>
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
 
 
 	<script>
@@ -145,7 +146,8 @@
 
 			const promise = auth.signInWithEmailAndPassword(email, pass);
 			promise
-				.catch(e => console.log(e.message));
+			
+				.catch(e => console.log(e.message),document.getElementById("alert").style.display = "none" );
 
 		});
 
@@ -154,7 +156,7 @@
 				console.log(firebaseUser);
 			} else {
 				console.log('not logged in')
-				document.getElementById("alert").style.visibility = "visible"
+				document.getElementById("alert").style.display = "visible"
 			}
 		})
 
