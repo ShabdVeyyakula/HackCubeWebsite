@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    
+
 
 
     <div class="limiter">
@@ -83,7 +83,7 @@
                     "></p>
 
                     <div class="container-login100-form-btn m-t-17">
-                        <button class="login100-form-btn" id="btnSignUp">
+                        <button class="login100-form-btn" id="btnSignUp" onclick="signUp()">
                             <p style="font-family: 'Roboto', sans-serif; color: white;">Sign Up</p>
                         </button>
                     </div>
@@ -98,7 +98,7 @@
     <div id="dropDownSelect1"></div>
 
 
-<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
@@ -109,6 +109,7 @@
     <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase.js"></script>
 
     <script>
         var firebaseConfig = {
@@ -145,54 +146,36 @@
         const txtRepeat = document.getElementById("passInputRepeat").value;
         const txtName = document.getElementById("nameInput").value;
 
-        function replaceAll(str, find, replace) {
-            return str.replace(new RegExp(find, 'g'), replace);
-
-        }
+        
 
         //Add login event
 
 
-        btnSignUp.addEventListener('click', e => {
-			const email = txtEmail.value;
-			const pass = txtPassword.value;
-			const auth = firebase.auth();
+        function signUp() {
+            const email = txtEmail;
+            const password = txtPassword;
+            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                console.log(errorMessage);
+                // ...
+            });
 
-			const promise = auth.createUserWithEmailAndPassword(email, pass);
-			promise
-			
-				.catch(e => console.log(e.message), );
-
-		});
-
-        function writeUserData(txtEmail, txtName, txtPassword, imageUrl) {
-
-            var formattedEmail = replaceAll(/txtEmail/g, ".", "-");
-
-
-            var _ref = firebase.database().ref().child("UserData").child(formattedEmail);
-
-            _ref.child("display name").set(txtName);
-            _ref.child("email").set(txtEmail);
-            _ref.child("password").set(txtPassword);
-            _ref.child("username").set(formattedEmail);
-
-
-
-
+            
         }
-
-
 
         firebase.auth().onAuthStateChanged(firebaseUser => {
             if (firebase) {
                 console.log(firebase);
-                writeUserData();
+                console.log(firebaseUser);
 
             } else {
                 console.log('not logged in')
             }
         })
+
+        
 
 
 
