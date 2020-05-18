@@ -18,8 +18,8 @@ googleSignIn = () => {
         console.log("Success, Google Account Linked");
         var user = result.user;
         var email = user.email;
-        var formattedEmail = email.replace(/./g, "-");
-        console.log(formattedEmail);
+        var formattedEmail1 = email.replace(/./g, "-");
+        console.log(formattedEmail1);
 
         localStorage.setItem("email", email);
 
