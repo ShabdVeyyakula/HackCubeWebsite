@@ -310,13 +310,10 @@
             });
         }
 
-        function loadDashboard() {
-            document.getElementById('centerContent').innerHTML += "<h1>HELOOO</h1>";
-        }
-
-        function loadHackathons() {
-            document.getElementById('centerContent').innerHTML += "<h1>HIIIIII</h1>"
-        }
+        var readData = firebase.database().ref('UserData/' + fire);
+		starCountRef.on('value', function (snapshot) {
+			updateStarCount(postElement, snapshot.val());
+		});
 
 
 
