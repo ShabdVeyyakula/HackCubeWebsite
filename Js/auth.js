@@ -18,7 +18,7 @@ googleSignIn = () => {
         console.log("Success, Google Account Linked");
         var user = result.user;
         var email = user.email;
-        var formattedEmail = email.replace(/email/g, ".", "-");
+        var formattedEmail = email.replace(/./g, "-");
         console.log(formattedEmail);
 
         localStorage.setItem("email", email);
@@ -34,18 +34,15 @@ googleSignIn = () => {
 
 
 
+
+
 const txtEmail = document.getElementById("emailInput");
 const txtPassword = document.getElementById("passInput");
 const btnSignIn = document.getElementById("btnSignIn");
 
 //Add login event
 
-function name(email) {
-    return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-        var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
-        // ...
-      });
-}
+
 
 btnSignIn.addEventListener('click', e => {
     const email = txtEmail.value;
