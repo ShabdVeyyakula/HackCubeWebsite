@@ -22,6 +22,7 @@ googleSignIn = () => {
         console.log(formattedEmail1);
 
         localStorage.setItem("email", formattedEmail1);
+        window.location = "../views/layouts/dashboard.html";
         
 
 
