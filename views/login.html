@@ -124,7 +124,6 @@
 			firebase.auth().signInWithPopup(base_provider).then(function (result) {
 				console.log(result);
 				console.log("Success, Google Account Linked");
-				window.location = "../views/layouts/dashboard.html";
 				var user = result.user;
 				var email = user.email;
 				var formattedEmail = email.replace(/email/g, ".", "-");
