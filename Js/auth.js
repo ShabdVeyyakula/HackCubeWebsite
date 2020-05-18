@@ -21,7 +21,8 @@ googleSignIn = () => {
         var formattedEmail1 = email.replace(".", "-");
         console.log(formattedEmail1);
 
-        localStorage.setItem("email", email);
+        localStorage.setItem("email", formattedEmail1);
+        
 
 
     }).catch(function (err) {

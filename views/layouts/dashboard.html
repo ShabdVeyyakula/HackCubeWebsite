@@ -233,8 +233,8 @@
 
 
                 </div>
-                <h2 class="profile-name">
-                    Shabd Veyyakula
+                <h2 class="profile-name" id="userEmail">
+                    
                 </h2>
                 <h2 class="upcomingevents">
                     Upcoming Events
@@ -311,10 +311,8 @@
             });
         }
 
-        var readData = firebase.database().ref('UserData/' + fire);
-		starCountRef.on('value', function (snapshot) {
-			updateStarCount(postElement, snapshot.val());
-		});
+        var email = localStorage.get("email");
+        document.getElementById("userEmail").innerHTML = email;
 
 
 
