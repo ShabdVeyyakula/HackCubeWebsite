@@ -143,7 +143,7 @@
                 var _ref = firebase.database().ref().child("UserData").child(formattedEmail1);
                 console.log(email);
                 console.log(name);
-                _ref.child("display name").set(name);
+                _ref.child("display name").set(txtName);
                 _ref.child("email").set(email);
                 _red.child("username").set(formattedEmail1);
                 
