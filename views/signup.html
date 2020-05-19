@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 
     <link rel="stylesheet" type="text/css" href="../CSS/util.css">
@@ -33,10 +34,12 @@
                         <p style="font-family: 'Roboto', sans-serif; color: white;">Facebook</p>
                     </a>
 
-                    <a href="#" class="btn-google m-b-20" style="text-decoration: none;" onclick="googleSignIn()">
+                    <a href="#" class="btn-google m-b-20" style="text-decoration: none;;" onclick="googleSignIn()">
                         <img src="../Assets/icon-google.png">
                         <p style="font-family: 'Roboto', sans-serif; color: black;">Google</p>
                     </a>
+                    <div class="alert alert-danger" role="alert" id="alert" style="margin-top: 20px; width: 600px; display: none;">
+						<strong>Oops!</strong>Error Logging in with Google!</div>
 
                     <div class="p-t-31 p-b-9">
                         <span class="txt1">
@@ -79,8 +82,8 @@
                         <input class="input100" type="password" name="pass2" id="passInputRepeat">
                         <span class="focus-input100"></span>
                     </div>
-                    <p style="color: red; font-size: 15px; font-family: 'Roboto', sans-serif; display: hidden;
-                    "></p>
+                    <div class="alert alert-danger" role="alert" id="alert2" style="margin-top: 20px; width: 600px; display: none;">
+						<strong>Oops! </strong>Passwords do not Match!</div>
 
                     <div class="container-login100-form-btn m-t-17">
                         <button class="login100-form-btn" id="btnSignUp" onclick="signUp()">
@@ -110,91 +113,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase.js"></script>
-
-    <script>
-        var firebaseConfig = {
-            apiKey: "AIzaSyDZ9pYHurpHjpI33InoBi2ZJT_Fdu2Z10w",
-            authDomain: "hackerqmobile-newdatabase.firebaseapp.com",
-            databaseURL: "https://hackerqmobile-newdatabase.firebaseio.com/",
-            projectId: "hackerqmobile-newdatabase",
-            storageBucket: "hackerqmobile-newdatabase.appspot.com",
-            messagingSenderId: "462903816679",
-            appId: "1:462903816679:web:aac71517826ca6f094cd42",
-            measurementId: "G-1SVWFLQ5HH"
-        };
-        firebase.initializeApp(firebaseConfig);
-
-        const txtEmail = document.getElementById("emailInput").value;
-        const txtPassword = document.getElementById("passInput").value;
-        const btnSignUp = document.getElementById("btnSignUp").value;
-        const txtRepeat = document.getElementById("passInputRepeat").value;
-        const txtName = document.getElementById("nameInput").value;
-
-
-        googleSignIn = () => {
-            base_provider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithPopup(base_provider).then(function (result) {
-                console.log(result);
-                console.log("Success, Google Account Linked");
-                var user = result.user;
-                var email = user.email;
-                name = user.displayName;
-                var formattedEmail1 = email.replace(".", "-");
-                var _ref = firebase.database().ref().child("UserData").child(formattedEmail1);
-                console.log(email);
-                console.log(name);
-                _ref.child("display name").set(name);
-                _ref.child("email").set(email);
-                _ref.child("username").set(formattedEmail1);
-                
-            }).catch(function (err) {
-                console.log(err)
-                console.log("Google Sign In Failed")
-            })
-
-
-        }
-
-
-
-        
-
-
-
-        //Add login event
-
-
-        function signUp() {
-            const email = txtEmail;
-            const password = txtPassword;
-            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                console.log(errorMessage);
-                // ...
-            });
-
-
-        }
-
-        firebase.auth().onAuthStateChanged(firebaseUser => {
-            if (firebase) {
-                console.log(firebase);
-                console.log(firebaseUser);
-
-            } else {
-                console.log('not logged in')
-            }
-        })
-
-
-
-
-
-
-
-    </script>
+    <script src="../Js/authSignUp.js"></script>
 
 
     <link rel="stylesheet" href="../views/layouts/dashboard.html">
