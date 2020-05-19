@@ -142,7 +142,7 @@
                 var formattedEmail1 = email.replace(".", "-");
                 var _ref = firebase.database().ref().child("UserData").child(formattedEmail1);
                 console.log(email);
-                console.log(txtName);
+                console.log(name);
                 _ref.child("display name").set(name);
                 _ref.child("email").set(email);
                 _ref.child("username").set(formattedEmail1);
