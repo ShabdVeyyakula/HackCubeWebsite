@@ -32,6 +32,7 @@ googleSignIn = () => {
         _ref.child("display name").set(name);
         _ref.child("email").set(email);
         _ref.child("username").set(formattedEmail1);
+        localStorage.setItem("emailOfUser", formattedEmail1);
 
     }).catch(function (err) {
         console.log(err);

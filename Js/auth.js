@@ -23,7 +23,6 @@ googleSignIn = () => {
 
         localStorage.setItem("email", formattedEmail1);
         window.location = "../views/layouts/dashboard.html";
-        
 
 
     }).catch(function (err) {
@@ -67,4 +66,17 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         console.log('not logged in')
     }
 })
+
+const btnLogout = document.getElementById("btnLogout").value;
+
+
+function signOut() {
+    firebase.auth().signOut().then(function () {
+        // Sign-out successful.
+        window.location = "../login.html"
+    }).catch(function (error) {
+        // An error happened.
+        console.log("An error with signout has occured")
+    });
+}
 

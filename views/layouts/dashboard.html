@@ -233,7 +233,7 @@
 
 
                 </div>
-                <h2 class="profile-name" id="userEmail">
+                <h2 class="profile-name" id="nameDisplay">
                     
                 </h2>
                 <h2 class="upcomingevents">
@@ -310,10 +310,14 @@
                 console.log("An error with signout has occured")
             });
         }
+        var emailUser = localStorage.getItem("emailOfUser")
 
-        var email3 = localStorage.get("email");
-        document.getElementById("userEmail").innerHTML = email3;
+        var userId = firebase.auth().currentUser.displayName;
+        return firebase.database().ref('/UserData' + emailOfUser + displayName).once('value').then(function(snapshot) {
+            var username = (snapshot.val() && snapshot.val().username) || 'Anonymous';
+        })
 
+        document.getElementById('nameDisplay').innerHTML = username;
 
 
 
