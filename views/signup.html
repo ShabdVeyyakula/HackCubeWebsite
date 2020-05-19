@@ -138,12 +138,12 @@
                 console.log("Success, Google Account Linked");
                 var user = result.user;
                 var email = user.email;
-                var name = user.name;
+                name = user.displayName;
                 var formattedEmail1 = email.replace(".", "-");
                 var _ref = firebase.database().ref().child("UserData").child(formattedEmail1);
                 console.log(email);
                 console.log(txtName);
-                _ref.child("display name").set(txtName);
+                _ref.child("display name").set(name);
                 _ref.child("email").set(email);
                 _ref.child("username").set(formattedEmail1);
                 
