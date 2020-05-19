@@ -25,7 +25,7 @@ googleSignIn = () => {
         var user = result.user;
         var email = user.email;
         name = user.displayName;
-        var formattedEmail1 = email.replace(".", "-");
+        var formattedEmail1 = email.replaceAll(".", "-");
         var _ref = firebase.database().ref().child("UserData").child(formattedEmail1);
         console.log(email);
         console.log(name);
