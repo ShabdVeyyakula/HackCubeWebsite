@@ -13,15 +13,3 @@ firebase.initializeApp(firebaseConfig);
 let output = "";
 formattedUser = localStorage.getItem("email");
 
-function getHackathonData() {
-    var query = firebase.database().ref("UserData").orderByKey();
-    query.once("value")
-        .then(function (snapshot) {
-            snapshot.forEach(function (childSnapshot) {
-                // key will be "ada" the first time and "alan" the second time
-                var key = hackathons.key;
-                // childData will be the actual contents of the child
-                var hackathonData = hackathons.val();
-            });
-        });
-}

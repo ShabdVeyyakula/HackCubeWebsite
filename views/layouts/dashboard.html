@@ -20,7 +20,7 @@
 
 
 
-<body onload="getName(), getHackathonData()">
+<body onload="getEmail(), getHackathonData(), getName()">
 
     <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
@@ -51,13 +51,24 @@
         firebase.initializeApp(firebaseConfig);
 
 
-        function getName() {
+        function getEmail() {
             formattedUser = localStorage.getItem("email");
             console.log(formattedUser);
             firebase.database().ref('UserData/' + formattedUser).once('value').then(function (snapshot) {
                 var name2 = snapshot.val().email;
                 console.log(name2);
                 document.getElementById("nameDisplay").innerHTML = name2;
+
+            });
+        };
+
+        function getName() {
+            formattedUser = localStorage.getItem("email");
+            console.log(formattedUser);
+            firebase.database().ref('UserData/' + formattedUser).once('value').then(function (snapshot) {
+                var name4 = snapshot.val().display-name;
+                console.log(name4);
+                document.getElementById("welcomeName").innerHTML = name4;
 
             });
         };
@@ -104,7 +115,7 @@
 
                 <h1 class="title">Dashboard</h1>
                 <div class="welcome-back">
-                    <h1 class="welcome">Welcome Back Shabd</h1>
+                    <h1 class="welcome">Welcome Back, <h1 class="welcome" id="welcomeName"></h1></h1>
                     <h3 class="welcome-text">Welcome to your dashboard.<br> View all your options here!</h3>
                     <img src="/Assets/buisnessasset.png" alt="" class="buisness-vector">
 
