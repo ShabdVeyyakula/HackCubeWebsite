@@ -73,7 +73,7 @@
             };
 
             function getHackathonData() {
-                var emailRef = localStorage.get("email")
+                var emailRef = localStorage.getItem("email")
                 var hackathonsRef = firebase.database().ref().child("UserData").child(emailRef).child("Hackathons");
 
                 hackathonsRef.once("value", (snap) => {
