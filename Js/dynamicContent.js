@@ -23,6 +23,7 @@ hackathonsRef.once("value", (snap) => {
     if(rawData !== null){
         snap.forEach((child) => {
             hackathonsList.push([child.child("Code").val(), child.child("Date").val(), child.child("Hackathon Name").val(), child.child("Role").val()]);
+            //[code,date,name]
         });
     }
 

@@ -75,16 +75,17 @@
             function getHackathonData() {
                 var emailRef = localStorage.getItem("email")
                 var hackathonsRef = firebase.database().ref().child("UserData").child(emailRef).child("Hackathons");
+                var hackathonsList = [];
 
                 hackathonsRef.once("value", (snap) => {
-                    var hackathonsList = [];
-
+                
                     console.log(snap.val());
                     rawData = snap.val();
 
                     if (rawData !== null) {
                         snap.forEach((child) => {
-                            hackathonsList.push([child.child("Code").val(), child.child("Date").val(), child.child("Hackathon Name").val(), child.child("Role").val()]);
+                            hackathonsList.push([child.child("Code").val(), child.child("Date").val(), child.child("Hackathon Name").val(), child.child("Role").val(), child.child("ImageURL")]);
+                            //[code, date, name, role, imageURL]
                         });
                     }
 
@@ -97,13 +98,39 @@
 
 
                     for (let i = 0; i <= hackathonsList.length; i++) {
-                        /*
-                        elem = document.createElement("tr");
-                        elem.innerHTML = '<th scope="col" class="leaderboardData">1</th><th scope="col" class="leaderboardData">Shabd Veyyakul1a</th><th scope="col" class="leaderboardData">20321</th><th scope="col" class="leaderboardData">Level 1</th>';
-                        elem.classList.add("leaderboardData")
-                        elem.innerHTML = '<th scope="col" class="leaderboardData">'+(i+1).toString()+'</th><th scope="col" class="leaderboardData">' + dataList[i][0] + '</th><th scope="col" class="leaderboardData">' + dataList[i][1] + '</th><th scope="col" class="leaderboardData">Level ' +dataList[i][2] + '</th>';
-                        original.appendChild(elem);
-                        */
+                        let output = ""
+                        var hackathonName = hackathonsList[i][2];
+                        var hackathonCode = hackathonsList[i][0];
+                        var hackathonDate = hackathonsList[i][1];
+                        var bgImage = hackathonsList[i][4];
+
+                        output += `
+                        <div class="hackathon">
+                            <h2 class="hack-title">
+                                ${hackathonName}
+                            </h2>
+                            <p class="hack-des">
+                                ${hackathonCode}
+                            </p>
+                            <p>
+                                ${hackathonDate}
+                            </p>
+                            <div class="hack-img"
+                                style="background-image: url(${bgImage});">
+
+                            </div>
+
+                        </div>
+                        `
+
+                        if (output !== "") {
+                            $(output).appendTo("#yourHackathons");
+                        } else {
+                            console.log("Some error occured, when appending your hackathons")
+                        }
+
+
+                        
                     };
                 });
 
@@ -199,20 +226,8 @@
                         Your Hackathons
                     </h2>
 
-                    <div class="grid-layout">
-                        <div class="hackathon">
-                            <h2 class="hack-title">
-                                DubHacks
-                            </h2>
-                            <p class="hack-des">
-                                Lorem Ispum Hackathon description goes here
-                            </p>
-                            <div class="hack-img"
-                                style="background-image: url(https://media.blogto.com/articles/2019918-google.jpg?w=2048&cmd=resize_then_crop&height=1365&quality=70);">
-
-                            </div>
-
-                        </div>
+                    <div class="grid-layout" id="yourHackathons">
+                        
                         <div class="hackathon">
                             <h2 class="hack-title">
                                 SRCHacks
