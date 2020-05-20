@@ -62,15 +62,11 @@
             };
 
             function getName() {
-                formattedUser = localStorage.getItem("email");
-                console.log(formattedUser);
-                firebase.database().ref('UserData/' + formattedUser).once('value').then(function (snapshot) {
-                    var name4 = snapshot.val().display - name;
-                    console.log(name4);
-                    document.getElementById("welcomeName").innerHTML = name4;
+                userDisplayName = localStorage.getItem("name");
+                document.getElementById("welcomeName").innerHTML = userDisplayName;
 
-                });
-            };
+            }
+            
 
             function getHackathonData() {
                 var emailRef = localStorage.getItem("email")
@@ -103,30 +99,47 @@
                         var hackathonCode = hackathonsList[i][0];
                         var hackathonDate = hackathonsList[i][1];
                         var bgImage = hackathonsList[i][4];
+                        var hackathonRole = hackathonsList[i][3];
 
                         output += `
-                        <div class="hackathon">
-                            <h2 class="hack-title">
-                                ${hackathonName}
-                            </h2>
-                            <p class="hack-des">
-                                ${hackathonCode}
-                            </p>
-                            <p>
-                                ${hackathonDate}
-                            </p>
-                            <div class="hack-img"
-                                style="background-image: url(${bgImage});">
-
-                            </div>
-
-                        </div>
+                        <a href="" style="color: inherit; text-decoration: none;">
+                            <div class="hackathon">
+                                <h2 class="hack-title">
+                                    ${hackathonName}
+                                </h2>
+                                <ul style="display: flex; list-style-type: none; margin-left: -40px; margin-top: 40px;">
+                                    <li style="display: flex;">
+                                        <p class="hack-des" style="font-size: 20px; font-weight: bold;">
+                                            Hackathon Code: ${hackathonCode}
+                                        </p>
+                                        <p style="font-size: 20px; font-weight: bold;">
+                                        | 
+                                        </p>
+                                        <p style="width: 10px;">
+    
+                                        </p>
+                                        <p style="font-size: 20px; font-weight: bold;">
+                                            ${hackathonRole}
+                                        </p>
+                                    </li>
+                                </ul>
+                                
+                    
+                                <div class="hack-img">
+                                    <h2 style="margin-top: 30px;">
+                                        ${hackathonDate}
+                                    </h2>
+                                
+    
+                                </div>
+                        </a>
                         `
 
                         if (output !== "") {
                             $(output).appendTo("#yourHackathons");
                         } else {
-                            console.log("Some error occured, when appending your hackathons")
+                            console.log("Some error occured, when appending your hackathons");
+                            document.getElementById("noHacks").style.display = "initial";
                         }
 
 
@@ -179,8 +192,11 @@
 
                     <h1 class="title">Dashboard</h1>
                     <div class="welcome-back">
-                        <h1 class="welcome">Welcome Back, <h1 class="welcome" id="welcomeName"></h1>
-                        </h1>
+                        <div style="display: flex;">
+                            <h1 class="welcome">Welcome Back, </h1>
+                            <h1 class="welcome" id="welcomeName" style="margin-left: -20px;">Loading...</h1>
+
+                        </div>
                         <h3 class="welcome-text">Welcome to your dashboard.<br> View all your options here!</h3>
                         <img src="/Assets/buisnessasset.png" alt="" class="buisness-vector">
 
@@ -228,19 +244,11 @@
 
                     <div class="grid-layout" id="yourHackathons">
                         
-                        <div class="hackathon">
-                            <h2 class="hack-title">
-                                SRCHacks
-                            </h2>
-                            <p class="hack-des">
-                                Lorem Ispum Hackathon description goes here
-                            </p>
-                            <div class="hack-img"
-                                style="background-image: url(https://res.cloudinary.com/makeschool/image/upload/t_hero/v1/Homepage/building.jpg);">
+                        
 
-                            </div>
-
-                        </div>
+                        <div class="alert alert-primary" role="alert" style="width: 800px; height: 100px; font-size: 23px; display: none;" id="noHacks">
+                           You do not have any Hackathons. <a href="#" class="alert-link">Create one here</a>. 
+                          </div>                        
 
 
 
