@@ -227,3 +227,9 @@ body{
 .eventsli {
     margin-top: 30px;
 }
+
+@media only screen and (min-width: 768px) {
+    body {
+        zoom: 100%
+    }
+}

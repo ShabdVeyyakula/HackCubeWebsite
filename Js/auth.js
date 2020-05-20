@@ -18,11 +18,16 @@ googleSignIn = () => {
         console.log("Success, Google Account Linked");
         var user = result.user;
         var email = user.email;
-        var formattedEmail1 = email.replace(".", "-");
+        var name3 = user.displayName;
+        var formattedEmail1 = email.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '-');
         console.log(formattedEmail1);
 
         localStorage.setItem("email", formattedEmail1);
+        user = localStorage.getItem("email");
+        console.log(user);
         window.location = "../views/layouts/dashboard.html";
+
+
 
 
     }).catch(function (err) {
@@ -37,6 +42,8 @@ googleSignIn = () => {
 
 
 
+
+
 const txtEmail = document.getElementById("emailInput");
 const txtPassword = document.getElementById("passInput");
 const btnSignIn = document.getElementById("btnSignIn");
@@ -45,17 +52,7 @@ const btnSignIn = document.getElementById("btnSignIn");
 
 
 
-btnSignIn.addEventListener('click', e => {
-    const email = txtEmail.value;
-    const pass = txtPassword.value;
-    const auth = firebase.auth();
 
-    const promise = auth.signInWithEmailAndPassword(email, pass);
-    promise
-
-        .catch(e => console.log(e.message), document.getElementById("alert").style.display = "none");
-
-});
 
 
 
@@ -79,4 +76,14 @@ function signOut() {
         console.log("An error with signout has occured")
     });
 }
+
+
+
+
+
+
+
+
+
+
 

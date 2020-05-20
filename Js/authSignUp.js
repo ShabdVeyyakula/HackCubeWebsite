@@ -25,23 +25,23 @@ googleSignIn = () => {
         var user = result.user;
         var email = user.email;
         name = user.displayName;
-        var formattedEmail1 = email.replace(/./g, "-");
+        var formattedEmail1 = email.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '-');
         var _ref = firebase.database().ref().child("UserData").child(formattedEmail1);
-        console.log(email);
+        console.log(formattedEmail1);
         console.log(name);
-        _ref.child("display name").set(name);
+        _ref.child("display-name").set(name);
         _ref.child("email").set(email);
         _ref.child("username").set(formattedEmail1);
-        localStorage.setItem("emailOfUser", formattedEmail1);
+        localStorage.setItem("email", formattedEmail1);
 
     }).catch(function (err) {
         console.log(err);
         console.log("Google Sign In Failed");
         document.getElementById("alert").style.display = "initial";
-    })
+    });
 
 
-}
+};
 
 
 
@@ -77,10 +77,6 @@ function signUp() {
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
         console.log(user);
-        var _ref = firebase.database().ref().child("UserData").child(formattedEmail2);
-        _ref2.child("display name").set(txtName);
-        _ref2.child("email").set(txtEmail);
-        _ref2.child("username").set(formattedEmail2);
 
     } else {
         console.log("User not logged in");
