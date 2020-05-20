@@ -33,6 +33,7 @@ googleSignIn = () => {
     }).catch(function (err) {
         console.log(err)
         console.log("Google Sign In Failed")
+        document.getElementById("alert3").style.display = "initial";
     })
 
 
