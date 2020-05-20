@@ -69,16 +69,6 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 const btnLogout = document.getElementById("btnLogout").value;
 
 
-function signOut() {
-    firebase.auth().signOut().then(function () {
-        // Sign-out successful.
-        window.location = "../login.html"
-    }).catch(function (error) {
-        // An error happened.
-        console.log("An error with signout has occured")
-    });
-}
-
 
 
 

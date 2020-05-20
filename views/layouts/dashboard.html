@@ -34,7 +34,6 @@
         <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
         <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase.js"></script>
         <script src="../Js/authSignUp.js"></script>
-        <script src="/Js/auth.js"></script>
 
         <script>
             var firebaseConfig = {
@@ -51,14 +50,8 @@
 
 
             function getEmail() {
-                formattedUser = localStorage.getItem("email");
-                console.log(formattedUser);
-                firebase.database().ref('UserData/' + formattedUser).once('value').then(function (snapshot) {
-                    var name2 = snapshot.val().email;
-                    console.log(name2);
-                    document.getElementById("nameDisplay").innerHTML = name2;
-
-                });
+                userDisplayEmail = localStorage.getItem("email");
+                document.getElementById("nameDisplay").innerHTML = userDisplayEmail;
             };
 
             function getName() {
@@ -66,7 +59,7 @@
                 document.getElementById("welcomeName").innerHTML = userDisplayName;
 
             }
-            
+
 
             function getHackathonData() {
                 var emailRef = localStorage.getItem("email")
@@ -74,7 +67,7 @@
                 var hackathonsList = [];
 
                 hackathonsRef.once("value", (snap) => {
-                
+
                     console.log(snap.val());
                     rawData = snap.val();
 
@@ -143,11 +136,23 @@
                         }
 
 
-                        
+
                     };
                 });
 
             }
+
+            function signOut() {
+                firebase.auth().signOut().then(function () {
+                    // Sign-out successful.
+                    window.location = "../login.html"
+                }).catch(function (error) {
+                    // An error happened.
+                    console.log("An error with signout has occured")
+                });
+            }
+
+
 
 
         </script>
@@ -243,12 +248,13 @@
                     </h2>
 
                     <div class="grid-layout" id="yourHackathons">
-                        
-                        
 
-                        <div class="alert alert-primary" role="alert" style="width: 800px; height: 100px; font-size: 23px; display: none;" id="noHacks">
-                           You do not have any Hackathons. <a href="#" class="alert-link">Create one here</a>. 
-                          </div>                        
+
+
+                        <div class="alert alert-primary" role="alert"
+                            style="width: 800px; height: 100px; font-size: 23px; display: none;" id="noHacks">
+                            You do not have any Hackathons. <a href="#" class="alert-link">Create one here</a>.
+                        </div>
 
 
 
