@@ -19,8 +19,10 @@ googleSignIn = () => {
         var user = result.user;
         var email = user.email;
         var name3 = user.displayName;
+        var profilePic = user.photoURL;
         var formattedEmail1 = email.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '-');
         console.log(formattedEmail1);
+        localStorage.setItem("photo", profilePic);
 
         localStorage.setItem("email", formattedEmail1);
         localStorage.setItem("name", name3);

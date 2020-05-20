@@ -11,6 +11,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
         rel="stylesheet">
+    
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
 </head>
@@ -19,7 +22,7 @@
 
 
 
-<body onload="getEmail(), getHackathonData(), getName()">
+<body onload="getEmail(), getHackathonData(), getName(), getPic()">
     <script src="/Js/auth.js"></script>
     < <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
@@ -58,6 +61,22 @@
                 userDisplayName = localStorage.getItem("name");
                 document.getElementById("welcomeName").innerHTML = userDisplayName;
 
+            }
+
+            function getPic() {
+                userPic = localStorage.getItem("photo");
+                let output2 = "";
+
+                output2 += `
+                <img class="profilepic" style= "height: 200px; width: 200px; border-radius: 400px;" src = "${userPic}">
+
+
+                </img>
+                `
+
+                if (output2 !== "") {
+                    $(output2).appendTo("#profilePic");
+                }
             }
 
 
@@ -119,7 +138,7 @@
                                 
                     
                                 <div class="hack-img">
-                                    <h2 style="margin-top: 30px;">
+                                    <h2 style="margin-top: 30px; font-size: 20px">
                                         ${hackathonDate}
                                     </h2>
                                 
@@ -152,12 +171,18 @@
                 });
             }
 
+            
+
+            $(function() {
+                $("#centerContentTabs").tabs();
+            });
+
 
 
 
         </script>
 
-        <ul style="display: flex;" class="sections">
+        <ul style="display: flex;" class="sections" id="centerContentTabs">
             <li>
                 <!-- Left Section-->
                 <div class="leftBar23">
@@ -170,7 +195,7 @@
                             Dashboard
                         </li>
                         <li class="options" onclick="loadHackathons()">
-                            Hackathons
+                            <a href="#centerContent-2">Hackathons</a>
                         </li>
                         <li class="options">
                             My Hackathons
@@ -193,9 +218,10 @@
             </li>
             <li>
                 <!--Middle Section-->
-                <div id="centerContent" class="center">
+                <div id="centerContent"  class="center">
 
-                    <h1 class="title">Dashboard</h1>
+                    <div id="centerContent-1">
+                        <h1 class="title">Dashboard</h1>
                     <div class="welcome-back">
                         <div style="display: flex;">
                             <h1 class="welcome">Welcome Back, </h1>
@@ -260,6 +286,12 @@
 
                     </div>
 
+                    </div>
+                    <div id="centerContent-2">
+                        Hello This is a test
+
+                    </div>
+
 
                 </div>
 
@@ -269,9 +301,7 @@
                 <!--Right Section-->
                 <div class="rightBar23">
                     <h2 class="logout" id="btnLogout" onclick="signOut()">Logout</h2>
-                    <div class="profilepic"
-                        style="background-color: grey; height: 200px; width: 200px; border-radius: 400px;">
-
+                    <div id="profilePic">
 
                     </div>
                     <h2 class="profile-name" id="nameDisplay">
