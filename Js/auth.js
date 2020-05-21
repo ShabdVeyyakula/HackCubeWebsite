@@ -28,7 +28,7 @@ googleSignIn = () => {
         localStorage.setItem("name", name3);
         user = localStorage.getItem("email");
         console.log(user);
-        window.location = "../views/layouts/dashboard.html";
+        window.location = "../views/layouts/hackathonsContent.html";
 
 
 

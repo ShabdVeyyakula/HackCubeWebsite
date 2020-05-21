@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,11 +20,29 @@
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+    <title>
+      
+        Icon nav &middot; 
+      
+    </title>
 
-</head>
-<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+    
+      <link href="/assets/css/toolkit-inverse.css" rel="stylesheet">
+    
+    
+    <link href="/assets/css/application.css" rel="stylesheet">
 
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+    </style>
+  </head>
 
 
 <body onload="getEmail(), getHackathonData(), getName(), getPic()">
@@ -173,238 +196,128 @@
 
             
 
+        
 
 
 
 
         </script>
 
-        <ul style="display: flex;" class="sections" id="centerContentTabs">
-            <li>
-                <!-- Left Section-->
-                <div class="leftBar23">
-                    <h1 class="logo">
-                        Procura
-                    </h1>
-
-                    <ul class="screensList">
-                        <li class="options">
-                            <a href="./dashboard.html">Dashboard</a>
-                        </li>
-                        <li class="options">
-                            <a href="./hackathonsContent.html">Hackathons</a>
-                        </li>
-                        <li class="options">
-                            <a href="./myHackathonsContent.html">My Hackathons</a>
-                        </li>
-                        <li class="options">
-                            <a href="./joinHackathon.html">Join Hackathon</a>
-                        </li>
-                        <li class="options">
-                            <a href="settings.html">Settings</a>
-                        </li>
-                        <li class="options">
-                            <a href="./contact.html">Contact Support</a>
-                        </li>
 
 
-                    </ul>
+<div class="with-iconav">
+
+  <nav class="iconav">
+    <a class="iconav-brand" href="../index.html">
+      <span class="icon icon-leaf iconav-brand-icon"></span>
+    </a>
+    <div class="iconav-slider">
+      <ul class="nav nav-pills iconav-nav flex-md-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="../index.html" title="Overview" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-home"></span>
+            <small class="iconav-nav-label hidden-md-up">Overview</small>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../order-history/index.html" title="Order history" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-text-document"></span>
+            <small class="iconav-nav-label hidden-md-up">History</small>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../fluid/index.html" title="Fluid layout" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-globe"></span>
+            <small class="iconav-nav-label hidden-md-up">Fluid layout</small>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../icon-nav/index.html" title="Icon-nav" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-area-graph"></span>
+            <small class="iconav-nav-label hidden-md-up">Icon nav</small>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../docs/index.html" title="Docs" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-list"></span>
+            <small class="iconav-nav-label hidden-md-up">Docs</small>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../index-light/index.html" title="Light UI" data-toggle="tooltip" data-placement="right" data-container="body">
+            <span class="icon icon-flash"></span>
+            <small class="iconav-nav-label hidden-md-up">Light UI</small>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" title="Signed in as mdo" data-toggle="tooltip" data-placement="right" data-container="body">
+            <img src="../assets/img/avatar-mdo.png" alt="" class="rounded-circle">
+            <small class="iconav-nav-label hidden-md-up">@mdo</small>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="dashhead">
+      <div class="dashhead-titles">
+        <h6 class="dashhead-subtitle">Welcome</h6>
+        <h3 class="dashhead-title" id="welcomeName">Loading...</h3>
+      </div>
+
+      <div class="dashhead-toolbar">
+        <div class="input-with-icon dashhead-toolbar-item">
+          <input type="text" value="01/01/15 - 01/08/15" class="form-control" data-provide="datepicker">
+          <span class="icon icon-calendar"></span>
+        </div>
+        <span class="dashhead-toolbar-divider hidden-sm-down"></span>
+        <div class="btn-group dashhead-toolbar-item btn-group-thirds">
+          <button type="button" class="btn btn-outline-primary">ICONHAPPY</button>
+          <button type="button" class="btn btn-outline-primary active">ICONOK</button>
+          <button type="button" class="btn btn-outline-primary">ICONSAD</button>
+        </div>
+      </div>
+    </div>
+
+    <ul class="nav nav-bordered mt-4 mt-md-2 mb-0 clearfix" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a href="#traffic" class="nav-link active" role="tab" data-toggle="tab" aria-controls="traffic">Traffic</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a href="#sales" class="nav-link" role="tab" data-toggle="tab" aria-controls="sales">Sales</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a href="#support" class="nav-link" role="tab" data-toggle="tab" aria-controls="support">Support</a>
+      </li>
+    </ul>
+
+    <hr class="mt-0 mb-5">
+
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="traffic">
+        
+        </div>
+      </div>
+
+      <div id="yourHackathons">
+
+      </div>
+
+      
+
+    
 
 
-                </div>
-            </li>
-            <li>
-                <!--Middle Section-->
-                <div id="centerContent"  class="center">
-
-                    <div id="centerContent-1">
-                        <h1 class="title">Hackathons</h1>
-                    
-
-                    <ul class="chart title" style="list-style-type: none; display: flex; margin-left: 380px;">
-                        <li>
-                            
-
-                        </li>
-                        
-                        
-                    </ul>
-
-                    <ul class="charts">
-                        
-
-                        
-
-                    </ul>
-
-                    
-
-                    <div class="grid-layout" id="yourHackathons">
-
-
-
-                        <div class="alert alert-primary" role="alert"
-                            style="width: 800px; height: 100px; font-size: 23px; display: none;" id="noHacks">
-                            You do not have any Hackathons. <a href="#" class="alert-link">Create one here</a>.
-                        </div>
-
-
-
-                    </div>
-
-                    </div>
-                    <div id="centerContent-2">
-                        Hello This is a test
-
-                    </div>
-
-
-                </div>
-
-
-            </li>
-            <li>
-                <!--Right Section-->
-                <div class="rightBar23">
-                    <h2 class="logout" id="btnLogout" onclick="signOut()">Logout</h2>
-                    <div id="profilePic">
-
-                    </div>
-                    <h2 class="profile-name" id="nameDisplay">
-                        Loading...
-
-                    </h2>
-                    <h2 class="upcomingevents">
-                        Upcoming Events
-                    </h2>
-
-                    <ul class="events">
-                        <li class="eventsli">
-                            <div class="event">
-                                <h3 class="upcoming-title">
-                                    Procura Hacks
-                                </h3>
-                                <p class="upcoming-data">
-                                    February 28, 2021
-
-                                </p>
-
-                            </div>
-                        </li>
-                        <li class="eventsli">
-                            <div class="event">
-                                <h3 class="upcoming-title">
-                                    Procura Hacks
-                                </h3>
-                                <p class="upcoming-data">
-                                    February 28, 2021
-
-                                </p>
-
-                            </div>
-                        </li>
-                        <li class="eventsli">
-                            <div class="event">
-                                <h3 class="upcoming-title">
-                                    Procura Hacks
-                                </h3>
-                                <p class="upcoming-data">
-                                    February 28, 2021
-
-                                </p>
-
-                            </div>
-                        </li>
-
-                    </ul>
-
-
-
-                </div>
-            </li>
-        </ul>
-
-
-        <script>
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
-        </script>
-        <script>
-            var ctx = document.getElementById('myChart2').getContext('2d');
-            var myChart = new Chart(ctx, {
-                type: 'pie',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
-        </script>
-
-
-</body>
-
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/tether.min.js"></script>
+    <script src="../assets/js/chart.js"></script>
+    <script src="../assets/js/tablesorter.min.js"></script>
+    <script src="../assets/js/toolkit.js"></script>
+    <script src="../assets/js/application.js"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+    </script>
+  </body>
 </html>
