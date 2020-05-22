@@ -96,7 +96,7 @@
                 console.log(hackCreator);
 
 
-                var _refCreateHackathon = firebase.database().ref().child("UserData").child(hackCreator).child(Hackathons);
+                var _refCreateHackathon = firebase.database().ref().child("UserData").child(hackCreator).child("Hackathons");
                 _refCreateHackathon.child("Code").set(code);
                 _refCreateHackathon.child("Date").set(hackStart);
                 _refCreateHackathon.child("DateEnd").set(hackEnd);
