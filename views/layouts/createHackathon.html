@@ -93,6 +93,7 @@
                 var hackStart = document.getElementById("dateStart").value;
                 var hackEnd = document.getElementById("dateEnd").value;
                 var hackCreator = localStorage.getItem("email");
+                var bgImage = document.getElementById("imageInput").value;
                 console.log(hackCreator);
 
 
@@ -103,6 +104,7 @@
                 _refCreateHackathon.child("Hackathon Name").set(hackName);
                 _refCreateHackathon.child("Role").set("Hoster");
                 _refCreateHackathon.child("Status").set("Inactive")
+                _refCreateHackathon.child("ImageURL").set(bgImage);
                 console.log(code);
                 console.log(hackStart);
                 console.log(hackName);
@@ -286,6 +288,13 @@
                                     <input type="text" class="form-control" placeholder="Please enter a valid adress"
                                         aria-label="Recipient's username" aria-describedby="basic-addon2"
                                         id="hackLocation">
+                                    <div class="input-group-append">
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3" id="hackLocation">
+                                    <input type="text" class="form-control" placeholder="Image URL"
+                                        aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                        id="imageInput">
                                     <div class="input-group-append">
                                     </div>
                                 </div>
