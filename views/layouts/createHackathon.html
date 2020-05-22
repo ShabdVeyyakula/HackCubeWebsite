@@ -55,7 +55,7 @@
 </head>
 
 
-<body onload=" getHackathonData(), getName()">
+<body onload=" getHackathonData(), getName()" id="body">
     <script src="/Js/auth.js"></script>
     < <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
@@ -85,112 +85,53 @@
             firebase.initializeApp(firebaseConfig);
 
 
-            ///function getEmail() {
-            ///userDisplayEmail = localStorage.getItem("email");
-            ///document.getElementById("nameDisplay").innerHTML = userDisplayEmail;
-            ///};
+            function createHackathon() {
+                var code = (Math.floor(Math.random() * 10000) + 10000).toString().substring(1);
+                var hackName = document.getElementById("hackName").value;
+                var hackEmail = document.getElementById("hackEmail").value;
+                var hackLocation = document.getElementById("hackLocation").value;
+                var hackStart = document.getElementById("dateStart").value;
+                var hackEnd = document.getElementById("dateEnd").value;
+                var hackCreator = localStorage.get("email");
+                console.log(hackCreator);
 
-            function getName() {
-                userDisplayName = localStorage.getItem("name");
-                document.getElementById("welcomeName").innerHTML = userDisplayName;
+
+                var _refCreateHackathon = firebase.database().ref().child("UserData").child(hackCreator);
+                _refCreateHackathon.child("Code").set(code);
+                _refCreateHackathon.child("Date").set(hackStart);
+                _refCreateHackathon.child("DateEnd").set(hackEnd);
+                _refCreateHackathon.child("Hackathon Name").set(hackName);
+                _refCreateHackathon.child("Role").set("Hoster");
+                _refCreateHackathon.child("Status").set("Inactive")
+
+                let toastOutput = ""
+                toastOutput += `
+                <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="toast-header">
+                        <strong class="mr-auto">Great!</strong>
+                        <small class="text-muted">Now</small>
+                        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="toast-body">
+                        You have succesfully created ${hackName}.  To complete and activat hackathon Complete all the steps!
+                    </div>
+                </div>
+                
+                `
+
+                $(toastOutput).appendTo("#body");
+
+
+
+
+
+
+
 
             }
 
-
-
-
-            function getHackathonData() {
-                var emailRef = localStorage.getItem("email")
-                var hackathonsRef = firebase.database().ref().child("UserData").child(emailRef).child("Hackathons");
-                var hackathonsList = [];
-
-                hackathonsRef.once("value", (snap) => {
-
-                    console.log(snap.val());
-                    rawData = snap.val();
-
-                    if (rawData !== null) {
-                        snap.forEach((child) => {
-                            hackathonsList.push([child.child("Code").val(), child.child("Date").val(), child.child("Hackathon Name").val(), child.child("Role").val(), child.child("ImageURL")]);
-                            //[code, date, name, role, imageURL]
-                        });
-                    }
-
-                    console.log(hackathonsList);
-
-
-
-                }).then(function () {
-
-
-
-                    for (let i = 0; i <= hackathonsList.length; i++) {
-                        let output = ""
-                        let output2 = ""
-                        var hackathonName = hackathonsList[i][2];
-                        var hackathonCode = hackathonsList[i][0];
-                        var hackathonDate = hackathonsList[i][1];
-                        var bgImage = hackathonsList[i][4];
-                        var hackathonRole = hackathonsList[i][3];
-
-                        output += `
-                        <div class="card-primary col" style="width: 18rem; border: thin;  margin-top: 50px; border-radius: 10px; margin-right: 20px;" >
-                            <div style="height: 20px;"></div>
-
-                            <img class="card-img-top" src="${bgImage}" alt="${hackathonName}">
-                            <div class="card-body">
-                                <div style="height: 10px;">
-
-                                </div>
-                                <h2 class="card-title">
-                                    ${hackathonName}
-
-                                </h2>
-                              <p class="card-text">${hackathonName}</p>
-                              <p class="card-text">${hackathonCode} | ${hackathonDate}</p>
-                              <button type="button" class="btn btn" style="background-color: rgb(41, 41, 41); color: white;">View</button>
-                              <div style="height: 20px;"></div>
-
-                            </div>
-                          </div>
-                         `
-
-
-
-                        output2 += `
-                        <a class="list-group-item list-group-item-action justify-content-between" href="#">
-                                    <span class="list-group-progress" style="width: 1.2%;"></span>
-                                    ${hackathonName}
-                                    <span class="badge badge-primary">${hackathonRole}</span>
-                                    <span class="ml-a text-muted">${hackathonDate}</span>
-                        </a>
-                        
-                        `
-
-                        if (output2 !== "") {
-                            $(output).appendTo("#upcommingHackathons");
-                            $(output2).appendTo('#hackathonNumberCount')
-                        } else {
-                            console.log("Some error occured, when appending your hackathons");
-                            document.getElementById("noHacks").style.display = "initial";
-                        }
-
-
-
-                    };
-                });
-
-            }
-
-            function signOut() {
-                firebase.auth().signOut().then(function () {
-                    // Sign-out successful.
-                    window.location = "../login.html"
-                }).catch(function (error) {
-                    // An error happened.
-                    console.log("An error with signout has occured")
-                });
-            }
 
 
 
@@ -270,7 +211,8 @@
                             <h2 class="dashhead-title">Create Hackathon</h2>
                         </div>
 
-                        <button type="button" class="btn btn-primary create" style="margin-left: 320px;" onclick="returnBack()">Return to My
+                        <button type="button" class="btn btn-primary create" style="margin-left: 320px;"
+                            onclick="returnBack()">Return to My
                             Hackathons</button>
                         <style>
                             .create:hover {
@@ -327,24 +269,20 @@
                                     <div class="input-group-prepend">
                                     </div>
                                     <input type="text" class="form-control" placeholder="Hackathon Name"
-                                        aria-label="Username" aria-describedby="basic-addon1">
+                                        aria-label="Username" aria-describedby="basic-addon1" id="hackName">
                                 </div>
 
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Team Email"
-                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                        aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                        id="hackEmail">
                                     <div class="input-group-append">
                                     </div>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Description"
-                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                    <div class="input-group-append">
-                                    </div>
-                                </div>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder="Location"
-                                        aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group mb-3" id="hackLocation">
+                                    <input type="text" class="form-control" placeholder="Please enter a valid adress"
+                                        aria-label="Recipient's username" aria-describedby="basic-addon2"
+                                        id="hackLocation">
                                     <div class="input-group-append">
                                     </div>
                                 </div>
@@ -391,7 +329,8 @@
                                                                     </i>
                                                                 </div>
                                                                 <input class="form-control" id="date" name="date"
-                                                                    placeholder="MM/DD/YYYY" type="text" />
+                                                                    placeholder="MM/DD/YYYY" type="text"
+                                                                    id="dateStart" />
                                                             </div>
                                                         </div>
                                                     </div>
@@ -426,14 +365,14 @@
                                                                     </i>
                                                                 </div>
                                                                 <input class="form-control" id="date" name="date"
-                                                                    placeholder="MM/DD/YYYY" type="text" />
+                                                                    placeholder="MM/DD/YYYY" type="text" id="dateEnd" />
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="col-sm-10 col-sm-offset-2">
-                                                            <button class="btn btn-primary " name="submit"
-                                                                type="submit">
+                                                            <button class="btn btn-primary " name="submit" type="submit"
+                                                                onclick="createHackathon()">
                                                                 Submit
                                                             </button>
                                                         </div>
@@ -443,6 +382,8 @@
                                         </div>
                                     </div>
                                 </div>
+
+
 
 
                                 <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
@@ -561,40 +502,41 @@
 
                             <div class="tab-pane fade prizeInput" id="nav-contact2" role="tabpanel"
                                 aria-labelledby="nav-contact-tab">
-                               <div id="prizeInput">
-                                <div style="height: 20px;">
+                                <div id="prizeInput">
+                                    <div style="height: 20px;">
 
-                                </div>
-                                <h4>
-                                    Prize Name
-                                </h4>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Ex. Xbox" aria-label="Username"
-                                        aria-describedby="basic-addon1">
-                                </div>
-                                <h4>
-                                    Number of Winners
-                                </h4>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
+                                    <h4>
+                                        Prize Name
+                                    </h4>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="Ex. Xbox"
+                                            aria-label="Username" aria-describedby="basic-addon1">
                                     </div>
-                                    <input type="text" class="form-control" placeholder="4 members..."
-                                        aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                                <h4>
-                                    Prize Description
-                                </h4>
-                                <div class="form-group">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                </div>
-                                <div class="col">
+                                    <h4>
+                                        Number of Winners
+                                    </h4>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                        </div>
+                                        <input type="text" class="form-control" placeholder="4 members..."
+                                            aria-label="Username" aria-describedby="basic-addon1">
+                                    </div>
+                                    <h4>
+                                        Prize Description
+                                    </h4>
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            rows="3"></textarea>
+                                    </div>
+                                    <div class="col">
 
 
-                                </div>
+                                    </div>
 
-                               </div>
+                                </div>
                                 <button class="btn btn-primary " name="submit" type="submit" id="addPrize">
                                     Add Prize +
                                 </button>
