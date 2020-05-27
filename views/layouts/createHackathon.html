@@ -94,6 +94,12 @@
                 var hackEnd = document.getElementById("dateEnd").value;
                 var hackCreator = localStorage.getItem("email");
                 var bgImage = document.getElementById("imageInput").value;
+                var hackWeb = document.getElementById("hackWeb").value;
+                var hackDes = document.getElementById("hackDescription");
+                var hackEligability = document.getElementById("hackEligability");
+                var hackRules = document.getElementById("rules");
+                var criteria = document.getElementById("criteria");
+                var judges = document.getElementById("judges");
                 console.log(hackCreator);
 
 
@@ -106,6 +112,12 @@
                 _refCreateHackathon.child("Status").set("Inactive")
                 _refCreateHackathon.child("ImageURL").set(bgImage);
                 _refCreateHackathon.child("Hackathon Location").set(hackLocation);
+                _refCreateHackathon.child("website").set(hackWeb);
+                _refCreateHackathon.child("description").set(hackDes);
+                _refCreateHackathon.child("eligability").set(hackEligability);
+                _refCreateHackathon.child("rules").set(hackRules);
+                _refCreateHackathon.child("criteria").set(criteria);
+                _refCreateHackathon.child("judges").set(judges);
 
                 console.log(code);
                 console.log(hackStart);
@@ -119,6 +131,12 @@
                 _refCreateHackathon2.child("Status").set("Inactive")
                 _refCreateHackathon2.child("ImageURL").set(bgImage);
                 _refCreateHackathon2.child("Hackathon Location").set(hackLocation);
+                _refCreateHackathon2.child("website").set(hackWeb);
+                _refCreateHackathon2.child("description").set(hackDes);
+                _refCreateHackathon2.child("eligability").set(hackEligability);
+                _refCreateHackathon2.child("rules").set(hackRules);
+                _refCreateHackathon2.child("criteria").set(criteria);
+                _refCreateHackathon2.child("judges").set(judges);
 
 
 
@@ -469,22 +487,14 @@
                                     <div class="input-group-prepend">
                                     </div>
                                     <input type="text" class="form-control" placeholder="Hackathon Website"
-                                        aria-label="Username" aria-describedby="basic-addon1">
+                                        aria-label="Username" aria-describedby="basic-addon1" id="hackWeb">
                                 </div>
                                 <h4>Hackathon Description</h4>
 
                                 <div class="form-group">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="hackDescription"></textarea>
                                 </div>
-                                <h4>
-                                    Video
-                                </h4>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                    </div>
-                                    <input type="text" class="form-control" placeholder="Ex. youtube.com"
-                                        aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
+                               
                                 <h4>
                                     Eligability
                                 </h4>
@@ -492,7 +502,7 @@
                                     <div class="input-group-prepend">
                                     </div>
                                     <input type="text" class="form-control" placeholder="..." aria-label="Username"
-                                        aria-describedby="basic-addon1">
+                                        aria-describedby="basic-addon1" id="hackEligability">
                                 </div>
                                 <h4>
                                     Rules
@@ -501,7 +511,7 @@
                                     <div class="input-group-prepend">
                                     </div>
                                     <input type="text" class="form-control" placeholder="List of Rules..."
-                                        aria-label="Username" aria-describedby="basic-addon1">
+                                        aria-label="Username" aria-describedby="basic-addon1" id="rules">
                                 </div>
                                 <h4>
                                     Code of Conduct
@@ -529,7 +539,7 @@
 
 
                                 <div class="form-group">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="criteria"></textarea>
                                 </div>
                                 <button class="btn btn-primary " name="submit" type="submit">
                                     Upload Criteria PDF
@@ -542,7 +552,7 @@
 
 
                                 <div class="form-group">
-                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" id="judges"></textarea>
                                 </div>
 
                                 <button class="btn btn-primary " name="submit" type="submit" onclick="createHackathon(), myFunction()">
