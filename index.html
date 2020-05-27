@@ -55,38 +55,40 @@
 
 
   <!--NAVBAR-->
-  <style>
-    .navbar-default {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background-color: #400072;
-    }
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #400072;">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a href="./views/login.html"><button class="btn btn-outline-success" type="button">Login</button></a>
 
-    li {
-      float: left;
-    }
-
-    li a {
-      display: block;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-    }
-  </style>
-  </head>
-
-  <body>
-
-    <ul class="navbar-default" id="navbar">
-      <li><a class="active" href="#home" >Procura</a></li>
-      <li><a href="#news">Features</a></li>
-      <li><a href="#contact">Plans</a></li>
-      <li><a href="#about">More Information</a></li>
-      <li><button id="myBtn">Contact Us!</button></li>
-    </ul>
+      </form>
+    </div>
+  </nav>
 
     <style>
       @media screen and (max-width: 580px) {
@@ -127,11 +129,10 @@
 
               <div class="row">
 
-                <button class="learnMoreBtn" href="#statsSection">Learn More →</button>
+                <button class="learnMoreBtn" href="#statsSection">Get Started →</button>
 
                 <span class="placeholder" style="width: 20px;"></span>
 
-                <a href="#overallFeatures"><button class="getStartedBtn">Get Started</button></a>
 
 
               </div>
