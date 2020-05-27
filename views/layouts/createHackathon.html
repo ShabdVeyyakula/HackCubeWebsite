@@ -105,6 +105,8 @@
                 _refCreateHackathon.child("Role").set("Hoster");
                 _refCreateHackathon.child("Status").set("Inactive")
                 _refCreateHackathon.child("ImageURL").set(bgImage);
+                _refCreateHackathon.child("Hackathon Location").set(hackLocation);
+
                 console.log(code);
                 console.log(hackStart);
                 console.log(hackName);
@@ -116,6 +118,8 @@
                 _refCreateHackathon2.child("Role").set("Hoster");
                 _refCreateHackathon2.child("Status").set("Inactive")
                 _refCreateHackathon2.child("ImageURL").set(bgImage);
+                _refCreateHackathon2.child("Hackathon Location").set(hackLocation);
+
 
 
                 let toastOutput = ""
@@ -315,8 +319,7 @@
                                     role="tab" aria-controls="nav-profile" aria-selected="false">Hackathon Site</a>
                                 <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact"
                                     role="tab" aria-controls="nav-contact" aria-selected="false">Judging</a>
-                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact2"
-                                    role="tab" aria-controls="nav-contact" aria-selected="false">Prizes</a>
+                                
                             </div>
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
@@ -340,7 +343,7 @@
                                     </div>
                                 </div>
                                 <div class="input-group mb-3" id="hackLocation">
-                                    <input type="text" class="form-control" placeholder="Please enter a valid adress"
+                                    <input type="text" class="form-control" placeholder="Location"
                                         aria-label="Recipient's username" aria-describedby="basic-addon2"
                                         id="hackLocation">
                                     <div class="input-group-append">
@@ -542,101 +545,18 @@
                                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 </div>
 
+                                <button class="btn btn-primary " name="submit" type="submit" onclick="createHackathon(), myFunction()">
+                                    Create Hackathon
+                                 </button>
+
                             </div>
+                            
 
-                            <div class="tab-pane fade prizeInput" id="nav-contact2" role="tabpanel"
-                                aria-labelledby="nav-contact-tab">
-                                <div id="prizeInput">
-                                    <div style="height: 20px;">
-
-                                    </div>
-                                    <h4>
-                                        Prize Name
-                                    </h4>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="Ex. Xbox"
-                                            aria-label="Username" aria-describedby="basic-addon1">
-                                    </div>
-                                    <h4>
-                                        Number of Winners
-                                    </h4>
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                        </div>
-                                        <input type="text" class="form-control" placeholder="4 members..."
-                                            aria-label="Username" aria-describedby="basic-addon1">
-                                    </div>
-                                    <h4>
-                                        Prize Description
-                                    </h4>
-                                    <div class="form-group">
-                                        <textarea class="form-control" id="exampleFormControlTextarea1"
-                                            rows="3"></textarea>
-                                    </div>
-                                    <div class="col">
-
-
-                                    </div>
-
-                                </div>
-                                <button class="btn btn-primary " name="submit" type="submit" id="addPrize">
-                                    Add Prize +
-                                </button>
-
-
-                                <script>
-                                    $('#addPrize').on('click', function () {
-                                        let output4 = "";
-                                        output4 += `
-                                        <div style="height: 20px;">
-
-                                            </div>
-                                            <h4>
-                                                Prize Name
-                                            </h4>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="Ex. Xbox" aria-label="Username"
-                                                    aria-describedby="basic-addon1">
-                                            </div>
-                                            <h4>
-                                                Number of Winners
-                                            </h4>
-                                            <div class="input-group mb-3">
-                                                <div class="input-group-prepend">
-                                                </div>
-                                                <input type="text" class="form-control" placeholder="4 members..."
-                                                    aria-label="Username" aria-describedby="basic-addon1">
-                                            </div>
-                                            <h4>
-                                                Prize Description
-                                            </h4>
-                                            <div class="form-group">
-                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                            </div>
-                                            <div class="col">
-                                                
-
-                                            </div>                                   
-                                        `
-                                        $(output4).appendTo('#prizeInput')
-                                    });
-                                </script>
-
-
-
-
-
-
+                
                             </div>
                         </div>
                         <div style="margin-top: 40px;"></div>
-                        <button class="btn btn-primary " name="submit" type="submit" onclick="createHackathon(), myFunction()">
-                            Update
-                        </button>
+                        
                 </div>
 
 
