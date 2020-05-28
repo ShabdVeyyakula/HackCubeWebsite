@@ -117,9 +117,10 @@
                 _refCreateHackathon.child("rules").set(hackRules);
                 _refCreateHackathon.child("criteria").set(criteria);
                 _refCreateHackathon.child("judges").set(judges);
+                _refCreateHackathon.child("Hackathon Location").set(hackLocation);
 
                 console.log(code);
-                console.log(hackStart);
+                console.log(hackStart); 
                 console.log(hackName);
                 var _refCreateHackathon2 = firebase.database().ref().child("Hackathons").child(code);
                 _refCreateHackathon2.child("Code").set(code);
@@ -135,6 +136,8 @@
                 _refCreateHackathon2.child("rules").set(hackRules);
                 _refCreateHackathon2.child("criteria").set(criteria);
                 _refCreateHackathon2.child("judges").set(judges);
+                _refCreateHackathon2.child("Hackathon Location").set(hackLocation);
+
 
 
 
