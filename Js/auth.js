@@ -23,6 +23,8 @@ googleSignIn = () => {
         var formattedEmail1 = email.replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '-');
         console.log(formattedEmail1);
         localStorage.setItem("photo", profilePic);
+        localStorage.setItem("normalEmail", email);
+        
 
         localStorage.setItem("email", formattedEmail1);
         localStorage.setItem("name", name3);

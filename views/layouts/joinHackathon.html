@@ -185,6 +185,19 @@
                 });
             }
 
+            function joinHackathon() {
+                var joinCode = document.getElementById("joinCode");
+                var userEmail = localStorage.getItem("normalEmail");
+                var userName = localStorage.getItem("name")
+                var userId = Math.floor(100000000 + Math.random() * 900000000);
+
+
+                _refHackathonAttendees = firebase.database().ref().child("Hackathons").child(joinCode).child("Attendees").child(userId);
+                _refHackathonAttendees.child("Email").set(userEmail);
+                _refHackathonAttendees.child("Name").set(userName);
+                _refHackathonAttendees,child("Status").set("Absent");
+            }
+
 
 
 
@@ -288,48 +301,16 @@
                         <h1>
                             Enter Access Code Here
                         </h1>
-                        <div class="container">
-                            <div class="pinBox">
-                                <input class="pin" type="text" maxlength="1" min="0" max="9" />
-                                <input class="pin" type="text" maxlength="1" min="0" max="9" />
-                                <input class="pin" type="text" maxlength="1" min="0" max="9" />
-                                <input class="pin" type="text" maxlength="1" min="0" max="9" />
-                                
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
                             </div>
+                            <input type="number" class="form-control" placeholder="Hackathon Code"
+                                aria-label="Username" aria-describedby="basic-addon1" id="joinCode" style="width: 300px; height: 100px; font-size: 30px;" maxlength="4">
+                        </div>
+                        
                     </center>
 
-                        <script>
-                            var container = document.getElementsByClassName("container")[0];
-                            container.onkeyup = function (e) {
-                                var target = e.srcElement || e.target;
-                                var maxLength = parseInt(target.attributes["maxlength"].value, 10);
-                                var myLength = target.value.length;
-                                if (myLength >= maxLength) {
-                                    var next = target;
-                                    while (next = next.nextElementSibling) {
-                                        if (next == null)
-                                            break;
-                                        if (next.tagName.toLowerCase() === "input") {
-                                            next.focus();
-                                            break;
-                                        }
-                                    }
-                                }
-                                // Move to previous field if empty (user pressed backspace)
-                                else if (myLength === 0) {
-                                    var previous = target;
-                                    while (previous = previous.previousElementSibling) {
-                                        if (previous == null)
-                                            break;
-                                        if (previous.tagName.toLowerCase() === "input") {
-                                            previous.focus();
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
-
-                        </script>
+                       
 
                         <center style="margin-top: 50px;">
                             <button class="btn btn-primary">Join Hackathon</button>
