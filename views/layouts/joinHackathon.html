@@ -83,97 +83,11 @@
             ///document.getElementById("nameDisplay").innerHTML = userDisplayEmail;
             ///};
 
-            function getName() {
-                userDisplayName = localStorage.getItem("name");
-                document.getElementById("welcomeName").innerHTML = userDisplayName;
-
-            }
 
 
 
 
-            function getHackathonData() {
-                var emailRef = localStorage.getItem("email")
-                var hackathonsRef = firebase.database().ref().child("UserData").child(emailRef).child("Hackathons");
-                var hackathonsList = [];
-
-                hackathonsRef.once("value", (snap) => {
-
-                    console.log(snap.val());
-                    rawData = snap.val();
-
-                    if (rawData !== null) {
-                        snap.forEach((child) => {
-                            hackathonsList.push([child.child("Code").val(), child.child("Date").val(), child.child("Hackathon Name").val(), child.child("Role").val(), child.child("ImageURL")]);
-                            //[code, date, name, role, imageURL]
-                        });
-                    }
-
-                    console.log(hackathonsList);
-
-
-
-                }).then(function () {
-
-
-
-                    for (let i = 0; i <= hackathonsList.length; i++) {
-                        let output = ""
-                        let output2 = ""
-                        var hackathonName = hackathonsList[i][2];
-                        var hackathonCode = hackathonsList[i][0];
-                        var hackathonDate = hackathonsList[i][1];
-                        var bgImage = hackathonsList[i][4];
-                        var hackathonRole = hackathonsList[i][3];
-
-                        output += `
-                        <div class="card-primary col" style="width: 18rem; border: thin;  margin-top: 50px; border-radius: 10px; margin-right: 20px;" >
-                            <div style="height: 20px;"></div>
-
-                            <img class="card-img-top" src="${bgImage}" alt="${hackathonName}">
-                            <div class="card-body">
-                                <div style="height: 10px;">
-
-                                </div>
-                                <h2 class="card-title">
-                                    ${hackathonName}
-
-                                </h2>
-                              <p class="card-text">${hackathonName}</p>
-                              <p class="card-text">${hackathonCode} | ${hackathonDate}</p>
-                              <button type="button" class="btn btn" style="background-color: rgb(41, 41, 41); color: white;">View</button>
-                              <div style="height: 20px;"></div>
-
-                            </div>
-                          </div>
-                         `
-
-
-
-                        output2 += `
-                        <a class="list-group-item list-group-item-action justify-content-between" href="#">
-                                    <span class="list-group-progress" style="width: 1.2%;"></span>
-                                    ${hackathonName}
-                                    <span class="badge badge-primary">${hackathonRole}</span>
-                                    <span class="ml-a text-muted">${hackathonDate}</span>
-                        </a>
-                        
-                        `
-
-                        if (output2 !== "") {
-                            $(output).appendTo("#upcommingHackathons");
-                            $(output2).appendTo('#hackathonNumberCount')
-                        } else {
-                            console.log("Some error occured, when appending your hackathons");
-                            document.getElementById("noHacks").style.display = "initial";
-                        }
-
-
-
-                    };
-                });
-
-            }
+           
 
             function signOut() {
                 firebase.auth().signOut().then(function () {
