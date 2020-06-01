@@ -100,7 +100,7 @@
             }
 
             function joinHackathon() {
-                var joinCode = document.getElementById("joinCode");
+                var joinCode = document.getElementById("joinCode").value;
                 var userEmail = localStorage.getItem("normalEmail");
                 var userName = localStorage.getItem("name")
                 var userId = Math.floor(100000000 + Math.random() * 900000000);
@@ -221,7 +221,7 @@
                             <div class="input-group-prepend">
                             </div>
                             <input type="number" class="form-control" placeholder="Hackathon Code"
-                                aria-label="Username" aria-describedby="basic-addon1" id="joinCode" style="width: 300px; height: 100px; font-size: 30px;" maxlength="4">
+                                 id="joinCode" style="width: 300px; height: 100px; font-size: 30px;" maxlength="4">
                         </div>
                         
                     </center>
