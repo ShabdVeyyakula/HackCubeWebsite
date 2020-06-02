@@ -127,25 +127,17 @@
                         var hackathonRole = hackathonsList[i][3];
 
                         output += `
-                        <div class="card-primary col" style="width: 18rem; border: thin;  margin-top: 50px; border-radius: 10px; margin-right: 20px;" >
-                            <div style="height: 20px;"></div>
-
-                            <img class="card-img-top" src="${bgImage}" alt="${hackathonName}">
-                            <div class="card-body">
-                                <div style="height: 10px;">
-
+                        <div class="col-lg-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#"><img class="card-img-top" src="${bgImage}" alt=""></a>
+                                <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">${hackathonName}</a>
+                                </h4>
+                                <p class="card-text">${hackathonRole}</p>
                                 </div>
-                                <h2 class="card-title">
-                                    ${hackathonName}
-
-                                </h2>
-                              <p class="card-text">${hackathonName}</p>
-                              <p class="card-text">${hackathonCode} | ${hackathonDate}</p>
-                              <button type="button" class="btn btn" style="background-color: rgb(41, 41, 41); color: white;">View</button>
-                              <div style="height: 20px;"></div>
-
                             </div>
-                          </div>
+                        </div>
                          `
 
 
@@ -293,7 +285,7 @@
                         <h3 class="hr-divider-content hr-divider-heading">Upcomming Hackathons</h3>
                     </div>
 
-                    <div class="upcommingHackathons" id="upcommingHackathons">
+                    <div class="row" id="upcommingHackathons">
 
                     </div>
 
