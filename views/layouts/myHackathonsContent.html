@@ -142,19 +142,16 @@
 
 
 
-                        output2 += `
-                        <a class="list-group-item list-group-item-action justify-content-between" href="#">
-                                    <span class="list-group-progress" style="width: 1.2%;"></span>
-                                    ${hackathonName}
-                                    <span class="badge badge-primary">${hackathonRole}</span>
-                                    <span class="ml-a text-muted">${hackathonDate}</span>
-                        </a>
                         
-                        `
 
                         if (output2 !== "") {
-                            $(output).appendTo("#upcommingHackathons");
-                            $(output2).appendTo('#hackathonNumberCount')
+                            if(hackathonRole == "Hoster") {
+                                $(output).appendTo("#Hosted Hackathons")
+                            } else {
+                                $(output).appendTo("#upcommingHackathons");
+
+
+                            }
                         } else {
                             console.log("Some error occured, when appending your hackathons");
                             document.getElementById("noHacks").style.display = "initial";
