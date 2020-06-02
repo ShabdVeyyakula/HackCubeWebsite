@@ -125,7 +125,6 @@
                         var hackathonDate = hackathonsList[i][1];
                         var bgImage = hackathonsList[i][4];
                         var hackathonRole = hackathonsList[i][3];
-                        var hackathonLocation = hackathonsList[i][5];
 
                         output += `
                         <div class="col-lg-6 mb-4">
@@ -135,7 +134,7 @@
                                 <h4 class="card-title">
                                     ${hackathonName}
                                 </h4>
-                                <p class="card-text">${hackathonLocation}</p>
+                                <p class="card-text">${hackathonRole}</p>
                                 </div>
                             </div>
                         </div>
@@ -146,7 +145,6 @@
                         
 
                         if (output !== "") {
-                            console.log(hackathonLocation)
                             if(hackathonRole == "Hoster") {
                                 $(output).appendTo("#hostedHackathons")
                             } else {
