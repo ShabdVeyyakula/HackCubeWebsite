@@ -113,7 +113,6 @@
                 _refHackathonAttendees.child("Email").set(userEmail);
                 _refHackathonAttendees.child("Name").set(userName);
                 _refHackathonAttendees.child("Status").set("Absent");
-                window.location("hackathonsContent.html");
 
                 _refHackathonAttendees2 = firebase.database().ref().child("UserData").child(formattedEmail).child("Hackathons").child(joinCode);
                 _refHackathonAttendees2.child("Role").set("Attendee")
