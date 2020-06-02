@@ -104,8 +104,8 @@
 
                     if (rawData !== null) {
                         snap.forEach((child) => {
-                            hackathonsList.push([child.child("Code").val(), child.child("Date").val(), child.child("Hackathon Name").val(), child.child("Role").val(), child.child("ImageURL")]);
-                            //[code, date, name, role, imageURL]
+                            hackathonsList.push([child.child("Code").val(), child.child("Date").val(), child.child("Hackathon Name").val(), child.child("Role").val(), child.child("ImageURL"), child.child("Hackathon Location")]);
+                            //[code, date, name, role, imageURL, Location]
                         });
                     }
 
@@ -125,16 +125,17 @@
                         var hackathonDate = hackathonsList[i][1];
                         var bgImage = hackathonsList[i][4];
                         var hackathonRole = hackathonsList[i][3];
+                        var hackathonLocation = hackathonsList[i][5];
 
                         output += `
                         <div class="col-lg-6 mb-4">
                             <div class="card h-100">
-                                <a href="#"><img class="card-img-top" src="${bgImage}" alt=""></a>
+                                <img class="card-img-top" src="${bgImage}" alt="">
                                 <div class="card-body">
                                 <h4 class="card-title">
-                                    <a href="#">${hackathonName}</a>
+                                    ${hackathonName}
                                 </h4>
-                                <p class="card-text">${hackathonRole}</p>
+                                <p class="card-text">${hackathonLocation}</p>
                                 </div>
                             </div>
                         </div>
