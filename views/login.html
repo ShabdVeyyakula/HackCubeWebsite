@@ -11,10 +11,17 @@
 	<link rel="stylesheet" type="text/css" href="../CSS/util.css">
 	<link rel="stylesheet" type="text/css" href="../CSS/loginstyle.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+		integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd"
+		crossorigin="anonymous"></script>
+	<script src="\Js\QR-API\qrcode.js"></script>
+
 
 	<!--===============================================================================================-->
 </head>
+
 <body style="background-color: #252830;">
 
 	<div class="limiter" style="position: absolute; top: 0;">
@@ -25,20 +32,47 @@
 						Sign In With
 					</span>
 
-					<a href="#" class="btn-face m-b-20" style="text-decoration: none;">
-						<img src="../Assets1/facebook-logo-966BBFBC34-seeklogo.com.png" style="width: 50px;  padding-right: 20px;   font-family: 'Roboto', sans-serif;}
-                        ">
-						<p style="font-family: 'Roboto', sans-serif; color: white;">Facebook</p>
+					<a href="#" class="btn-face m-b-20" style="text-decoration: none; background-color: aliceblue;"
+						onclick="qrSignInGenerate()" data-toggle="modal" data-target="#qrLogin" data-backdrop="static" data-keyboard="false">
+						<img src="../Assets/img/com.scanner.protect.icon.2020-02-03-08-27-53.png" width="50px;">
+						<p
+							style="font-family: 'Roboto', sans-serif; color: black; padding-top: 15px; padding-left: 10px;">
+							QR Login</p>
 					</a>
+
+					<!-- Modal QR LOGIN -->
+					<div class="modal fade" id="qrLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+						aria-hidden="true">
+						<div class="modal-dialog" role="document">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="exampleModalLabel">QR Login</h5>
+								</div>
+								<div class="modal-body">
+									<p style="font-family: Roboto;">Scan this code with your mobile phone. To scan, go
+										to Profile-> Settings-> QR Login.</p>
+
+									<center>
+										<div id="qrcode" class="qrcodeElement"></div>
+									</center>
+			
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="deleteQRCodefromDatabase()">Close</button>
+								</div>
+							</div>
+						</div>
+					</div>
 
 
 					<a href="#" class="btn-google m-b-20" style="text-decoration: none;" onclick="googleSignIn()">
 						<img src="../Assets1/icon-google.png">
-						<p style="font-family: 'Roboto', sans-serif; color: black;">Google</p>
+						<p style="font-family: 'Roboto', sans-serif; color: black; padding-top: 15px;">Google</p>
 					</a>
-					<div class="alert alert-danger" role="alert" id="alert3" style="margin-top: 20px; width: 600px; display: none;">
+					<div class="alert alert-danger" role="alert" id="alert3"
+						style="margin-top: 20px; width: 600px; display: none;">
 						<strong>Oops! </strong>Google Login Failed
-						</div>
+					</div>
 
 
 
@@ -65,7 +99,8 @@
 						<input class="input100" type="password" name="pass">
 						<span class="focus-input100"></span>
 					</div>
-					<div class="alert alert-danger" role="alert" id="alert" style="margin-top: 20px; width: 600px; display: none;">
+					<div class="alert alert-danger" role="alert" id="alert"
+						style="margin-top: 20px; width: 600px; display: none;">
 						<strong>Oops!</strong>Email and Password
 						dont Match</div>
 
@@ -94,16 +129,16 @@
 	<div id="dropDownSelect1"></div>
 	<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
 
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase.js"></script>
+	<!-- Add Firebase products that you want to use -->
+	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.14.4/firebase.js"></script>
 
 
 	<script src="../Js/auth.js"></script>

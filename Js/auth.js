@@ -24,7 +24,7 @@ googleSignIn = () => {
         console.log(formattedEmail1);
         localStorage.setItem("photo", profilePic);
         localStorage.setItem("normalEmail", email);
-        
+
 
         localStorage.setItem("email", formattedEmail1);
         localStorage.setItem("name", name3);
@@ -44,6 +44,77 @@ googleSignIn = () => {
 
 }
 
+function qrSignInGenerate() {
+
+    firebase.auth().signInAnonymously().catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // ...
+    });
+
+    var ref = firebase.database().ref().child("QR-Login").push();
+    console.log(ref.key);
+
+    ref.child("token").set(ref.key.toString());
+
+    makeQR(ref.key.toString());
+
+    // Sync object changes
+
+    var count = 0;
+
+    ref.on('value', function (snap) {
+        if(count != 0){
+            console.log("SYNCED");
+
+            var email = snap.val()["email"];
+            
+            loginWithEP("krishnatechpranav@gmail.com", "password123");
+
+        } else {
+            count = count + 1;
+        }
+        
+    });
+
+
+}
+
+
+function makeQR(text) {
+    localStorage.setItem("qrLoginToken", text);
+
+    var element = document.getElementById("qrcode");
+
+    element.innerHTML = "";
+
+    var qrcode = new QRCode("qrcode");
+
+    var qrText = text;
+
+    qrcode.makeCode(qrText);
+}
+
+
+function loginWithEP(email, password){
+    firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage.toString());
+      }).then(() => {
+          console.log("success");
+          $('#qrLogin').modal('hide');
+          //TODO: ADD REDIRECT HERE
+          deleteQRCodefromDatabase();
+      });
+}
+
+function deleteQRCodefromDatabase(){
+    var qrLoginToken = localStorage.getItem("qrLoginToken");
+
+    firebase.database().ref().child("QR-Login").child(qrLoginToken).remove();
+}
 
 
 
