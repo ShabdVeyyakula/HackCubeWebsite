@@ -1,0 +1,409 @@
+@font-face {
+    font-family: Arial, Helvetica, sans-serif;
+    src: "";
+  }
+
+html{
+    scroll-behavior: smooth;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    overflow-x: hidden;
+    
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.headerBackground
+{
+    background-color: #400072;
+}
+
+
+.h11
+{
+    position: absolute;
+    top: 30px;
+    left: 150px;
+    color: white;
+    font-size: 30px;
+}
+
+
+.mainTitle
+{
+    color: white;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.imageMain
+{
+    top: 100px;
+    left: 1000px;
+    color: white;
+    font-size: 60px;
+    font-weight: 700;
+    width: 500px;
+}
+
+.learnMoreBtn
+{
+    height: 50px;
+    width: 150px; 
+    color: rgb(0, 255, 191);
+    font-weight: 500;
+    border: 2px solid rgb(0, 255, 191);
+    border-radius: 30px;
+    background-color: transparent;
+    border-color: rgb(0, 255, 191);
+    transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
+    
+
+}
+
+.learnMoreBtn:hover
+{
+    background-color: rgb(0, 255, 191);
+
+    transform: scale(1.1) perspective(1px);
+    color: black;
+}   
+
+.learnMoreBtn:focus, input:focus{
+    outline: none;
+}
+
+.odometerBigText
+{
+    font-size: 90px;
+}
+
+.statsMiniTxt
+{
+    font-size: 35px;
+    color: rgb(136, 136, 136);
+}
+
+.odometer
+{
+    font-size: 90px;
+    left: 20%;
+}
+
+.header-dscrp
+{
+    font-size: 25px;
+    color: white;
+}
+
+.getStartedBtn
+{
+    height: 50px;
+    width: 150px; 
+    color: rgb(0, 255, 191);;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    background-color: transparent;
+    border-color: rgb(88, 114, 107);
+    transition: background-color 0.5s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.getStartedBtn:hover
+{
+    color: white;
+    font-weight: 500;
+    border: none;
+}
+
+.getStartedBtn:focus, input:focus{
+    outline: none;
+}
+
+
+.descriptionTitle
+{
+    font-size: 40;
+    color: #323f52;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+
+p{
+    font-weight: 440;
+    color: grey;
+    font-size: 16px;
+}
+
+.downloadFooter
+{
+    background-color: rgb(214, 214, 214);
+    height: 230px;
+    margin: 0%;
+}
+
+.downloadSectionTitle
+{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: white;
+}
+
+.footerMainTitle
+{
+    color: #a5abb3;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.footerTitles
+{
+    color: #a5abb3;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.footerText
+{
+    color: #a5abb3;
+    font-size: 17px;
+}
+
+
+.phoneTitles
+{
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
+}
+
+.phoneDescription
+{
+    font-size: 25px;
+    font-weight: 500px;
+    color: rgb(207, 207, 207);
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 50px;
+    align-items: center;
+    /* margin: auto; */
+    height: 100%;
+}
+
+.right {
+    text-align: center;
+}
+
+.download-btns {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+  }
+
+
+header
+{
+    overflow: hidden;
+    display: block;
+    
+    min-width: 100% !important;
+    min-height: 50% !important;
+}
+
+.features-pg-1
+{
+    height: 700px;
+    background-color: #f0f2f4;
+}
+
+.featureTitles
+{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.featureCaptions
+{
+    top: 50%;
+    bottom: 20%;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(109, 108, 108);
+}
+
+.learnMoreBtn1
+{
+    border: 2px solid black;
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    color: black;
+    transition: border 0.3s ease-in-out, transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.learnMoreBtn1:hover
+{
+    border: 2px solid #9e59f2;
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    color: #9e59f2;
+}
+
+.learnMoreBtn1:focus, input:focus{
+    outline: none;
+}
+
+.pricingOption-btn-nav
+{
+    margin-top: 3px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 130px;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    color: blueviolet;
+}
+
+.pricingOption-btn-nav:focus, input:focus{
+    outline: none;
+}
+
+.features-section-main
+{
+    box-shadow: black;
+}
+
+.features-title-main
+{
+    font-size: 40px;
+    font-weight: 600;
+
+}
+
+.features-title
+{
+    font-size: 20px;
+    font-weight: 500;   
+    color: black;
+    margin-bottom: 0px;
+}
+
+.features-captions
+{
+    font-size: 18px;
+    color: #9fa9b6;
+}
+
+
+.size1{
+    height: 590px;
+    width: 350px;
+    background-color: rgb(255, 255, 255);
+    Box-shadow:0 10px 20px #f2f6ff, 0 22px 32px rgba(0,0,0,0.23); border-radius: 10px;
+    margin-top: 30px;
+    
+
+}
+
+
+
+.features-pg-1
+{
+    height: 700px;
+    background-color: #f0f2f4;
+}
+
+.featureTitles
+{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.featureCaptions
+{
+    top: 50%;
+    bottom: 20%;
+    font-size: 20px;
+    font-weight: 500;
+    color: rgb(136, 136, 136);
+}
+
+.learnMoreBtn1
+{
+    border: 2px solid black;
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    color: black;
+    transition: border 0.5s ease-in-out, transform 0.3s ease-in-out, color 0.5s ease-in-out;
+}
+
+.learnMoreBtn1:hover
+{
+    border: 2px solid #9e59f2;
+    font-size: 20px;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    color: #9e59f2;
+}
+
+.learnMoreBtn1:focus, input:focus{
+    outline: none;
+}
+
+.pricingOption-btn
+{
+    height: 50px;
+    width: 100px;
+    background-color: white;
+    color: blueviolet;
+}
+
+.priceop{
+    margin-left: 50px;
+}
+
+.features{
+    font-weight: bold;
+    font-size: 18px;
+}
+.features li:before{
+    content: "✓";
+}
+
+.button2{
+    transition: border-radius 0.3s ease-in-out;
+
+}
+
+.button2:hover{
+    border-radius: 50px;
+}
+
+.features-card
+{
+    padding-top: 50px;
+    height: 280px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 
+    0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-left: 20px;
+    padding-right: 20px;
+}

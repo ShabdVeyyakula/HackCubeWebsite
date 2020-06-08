@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <link rel="stylesheet" href="../../CSS/dashboardstyles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <title>
+
+        Icon nav &middot;
+
+    </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"
+        integrity="sha256-8zyeSXm+yTvzUN1VgAOinFgaVFEFTyYzWShOy9w7WoQ=" crossorigin="anonymous"></script>
+
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+
+    <link href="/assets/css/toolkit-inverse.css" rel="stylesheet">
+
+
+    <link href="/assets/css/application.css" rel="stylesheet">
+
+    
+
+    <style>
+        /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+        /* this chunk of css is not part of the toolkit :) */
+        body {
+            width: 1px;
+            min-width: 100%;
+            *width: 100%;
+        }
+    </style>
+
+<link href='/assets/demo-to-codepen.css' rel='stylesheet' />
+
+
+<style>
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+
+  #calendar {
+    max-width: 900px;
+    margin: 40px auto;
+  }
+
+</style>
+
+
+<link href='https://unpkg.com/@fullcalendar/core@4.4.0/main.min.css' rel='stylesheet' />
+
+
+
+
+<link href='https://unpkg.com/@fullcalendar/daygrid@4.4.0/main.min.css' rel='stylesheet' />
+
+<link href='https://unpkg.com/@fullcalendar/timegrid@4.4.0/main.min.css' rel='stylesheet' />
+
+
+<script src='/assets/demo-to-codepen.js'></script>
+
+<script src='https://unpkg.com/@fullcalendar/core@4.4.0/main.min.js'></script>
+
+
+
+
+<script src='https://unpkg.com/@fullcalendar/interaction@4.4.0/main.min.js'></script>
+
+<script src='https://unpkg.com/@fullcalendar/daygrid@4.4.0/main.min.js'></script>
+
+<script src='https://unpkg.com/@fullcalendar/timegrid@4.4.0/main.min.js'></script>
+
+
+
+
+
+
+
+
+
+    
+</head>
+
+
+<body onload=" getHackathonData(), getName()">
+    <script src="/Js/auth.js"></script>
+    < <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.14.4/firebase.js"></script>
+        <script src="../Js/authSignUp.js"></script>
+
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyDZ9pYHurpHjpI33InoBi2ZJT_Fdu2Z10w",
+                authDomain: "hackerqmobile-newdatabase.firebaseapp.com",
+                databaseURL: "https://hackerqmobile-newdatabase.firebaseio.com/",
+                projectId: "hackerqmobile-newdatabase",
+                storageBucket: "hackerqmobile-newdatabase.appspot.com",
+                messagingSenderId: "462903816679",
+                appId: "1:462903816679:web:aac71517826ca6f094cd42",
+                measurementId: "G-1SVWFLQ5HH"
+            };
+            firebase.initializeApp(firebaseConfig);
+
+
+            ///function getEmail() {
+            ///userDisplayEmail = localStorage.getItem("email");
+            ///document.getElementById("nameDisplay").innerHTML = userDisplayEmail;
+            ///};
+
+            function getName() {
+                userDisplayName = localStorage.getItem("name");
+                document.getElementById("welcomeName").innerHTML = userDisplayName;
+
+            }
+
+
+
+
+            function getHackathonData() {
+                var emailRef = localStorage.getItem("email")
+                var hackathonsRef = firebase.database().ref().child("UserData").child(emailRef).child("Hackathons");
+                var hackathonsList = [];
+
+                hackathonsRef.once("value", (snap) => {
+
+                    console.log(snap.val());
+                    rawData = snap.val();
+
+                    if (rawData !== null) {
+                        snap.forEach((child) => {
+                            hackathonsList.push([child.child("Code").val(), child.child("Date").val(), child.child("Hackathon Name").val(), child.child("Role").val(), child.child("ImageURL")]);
+                            //[code, date, name, role, imageURL]
+                        });
+                    }
+
+                    console.log(hackathonsList);
+
+
+
+                }).then(function () {
+
+
+
+                    for (let i = 0; i <= hackathonsList.length; i++) {
+                        let output = ""
+                        let output2 = ""
+                        var hackathonName = hackathonsList[i][2];
+                        var hackathonCode = hackathonsList[i][0];
+                        var hackathonDate = hackathonsList[i][1];
+                        var bgImage = hackathonsList[i][4];
+                        var hackathonRole = hackathonsList[i][3];
+
+                        output += `
+                        <div class="card-primary col" style="width: 18rem; border: thin;  margin-top: 50px; border-radius: 10px; margin-right: 20px;" >
+                            <div style="height: 20px;"></div>
+
+                            <img class="card-img-top" src="${bgImage}" alt="${hackathonName}">
+                            <div class="card-body">
+                                <div style="height: 10px;">
+
+                                </div>
+                                <h2 class="card-title">
+                                    ${hackathonName}
+
+                                </h2>
+                              <p class="card-text">${hackathonName}</p>
+                              <p class="card-text">${hackathonCode} | ${hackathonDate}</p>
+                              <button type="button" class="btn btn" style="background-color: rgb(41, 41, 41); color: white;">View</button>
+                              <div style="height: 20px;"></div>
+
+                            </div>
+                          </div>
+                         `
+
+
+
+                        output2 += `
+                        <a class="list-group-item list-group-item-action justify-content-between" href="#">
+                                    <span class="list-group-progress" style="width: 1.2%;"></span>
+                                    ${hackathonName}
+                                    <span class="badge badge-primary">${hackathonRole}</span>
+                                    <span class="ml-a text-muted">${hackathonDate}</span>
+                        </a>
+                        
+                        `
+
+                        if (output2 !== "") {
+                            $(output).appendTo("#upcommingHackathons");
+                            $(output2).appendTo('#hackathonNumberCount')
+                        } else {
+                            console.log("Some error occured, when appending your hackathons");
+                            document.getElementById("noHacks").style.display = "initial";
+                        }
+
+
+
+                    };
+                });
+
+            }
+
+            function signOut() {
+                firebase.auth().signOut().then(function () {
+                    // Sign-out successful.
+                    window.location = "../login.html"
+                }).catch(function (error) {
+                    // An error happened.
+                    console.log("An error with signout has occured")
+                });
+            }
+
+
+
+
+
+
+
+
+        </script>
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 sidebar">
+                    <nav class="sidebar-nav">
+                        <div class="sidebar-header">
+                            <button class="nav-toggler nav-toggler-md sidebar-toggler" type="button"
+                                data-toggle="collapse" data-target="#nav-toggleable-md">
+                                <span class="sr-only">Toggle nav</span>
+                            </button>
+                            <a class="sidebar-brand img-responsive" href="index.html">
+                                <span class="icon icon-leaf sidebar-brand-icon"></span>
+                            </a>
+                        </div>
+
+                        <div class="collapse nav-toggleable-md" id="nav-toggleable-md">
+                            <form class="sidebar-form">
+                                <input class="form-control" type="text" placeholder="Search...">
+                                <button type="submit" class="btn-link">
+                                    <span class="icon icon-magnifying-glass"></span>
+                                </button>
+                            </form>
+                            <ul class="nav nav-pills nav-stacked flex-column">
+                                <li class="nav-header">Dashboards</li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../layouts/hackathonsContent.html">Dashboard</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../layouts/myHackathonsContent.html">Hackathons</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="../layouts/joinHackathon.html">Join Hackathon</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="icon-nav/index.html">Calender</a>
+                                </li>
+
+                                <li class="nav-header">More</li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="docs/index.html">
+                                        Toolkit docs
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="http://getbootstrap.com" target="blank">
+                                        Bootstrap docs
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link " href="index-light/index.html">Light UI</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#docsModal" data-toggle="modal">
+                                        Example modal
+                                    </a>
+                                </li>
+                            </ul>
+                            <hr class="visible-xs mt-3">
+                        </div>
+                    </nav>
+                </div>
+                <div class="col-md-9 content">
+                    <div class="dashhead">
+                        <div class="dashhead-titles">
+                            <h6 class="dashhead-subtitle">Welcome</h6>
+                            <h2 class="dashhead-title" id="welcomeName">Join Hackathon</h2>
+                        </div>
+
+                        <style>
+                            .create:hover {
+                                cursor: pointer;
+
+                            }
+                        </style>
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                    <div class="hr-divider mt-5 mb-3">
+                        <h3 class="hr-divider-content hr-divider-heading">Join Hackathon</h3>
+                    </div>
+
+                    <script>
+
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var calendarEl = document.getElementById('calendar');
+
+                            var calendar = new FullCalendar.Calendar(calendarEl, {
+                                plugins: ['dayGrid']
+                            });
+
+                            calendar.render();
+                        });
+
+                        var calendar = new FullCalendar.Calendar(calendarEl, {
+                            plugins: ['dayGrid', 'timeGrid', 'list'] // an array of strings!
+                        });
+
+                    </script>
+
+                    <div id='calendar'></div>
+
+                    
+
+
+
+                    <script src="assets/js/jquery.min.js"></script>
+                    <script src="assets/js/tether.min.js"></script>
+                    <script src="assets/js/chart.js"></script>
+                    <script src="assets/js/tablesorter.min.js"></script>
+                    <script src="assets/js/toolkit.js"></script>
+                    <script src="assets/js/application.js"></script>
+                    <script>
+                        // execute/clear BS loaders for docs
+                        $(function () { while (window.BS && window.BS.loader && window.BS.loader.length) { (window.BS.loader.pop())() } })
+                    </script>
+</body>
+
+</html>
